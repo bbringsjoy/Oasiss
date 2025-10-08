@@ -143,3 +143,12 @@ footer a:hover {
     color: #fff;
 }
 
+.hero-image img {
+    max-width: 50px !important; 
+}
+
+.home-section {
+    background-color: #100909 !important;
+}
+
+

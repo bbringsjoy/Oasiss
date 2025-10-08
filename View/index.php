@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> <!-- Font Awesome -->
-    <link href="imagens/icon.png" rel="shortcut icon">
+    <link href="images/icon.png" rel="shortcut icon">
 
     <title>Oásis</title>
 
@@ -19,7 +19,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid col-12">
                 <a class="navbar-brand" href="index.php?page=home">
-                    <img src="imagens/logo.png" alt="Logo" class="logohead">
+                    <img src="images/logo.png" alt="Logo" class="logohead">
                 </a>
                 <button class="navbar-toggler menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar"><i class="fa-solid fa-bars"></i></span>

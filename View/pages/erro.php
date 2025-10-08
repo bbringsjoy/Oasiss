@@ -1,5 +1,5 @@
 <section class="hero-section text-center text-white py-5 content-top-padding">
-    <div class="container d-flex align-items-center justify-content-center">
+    <div class="container-fluid d-flex align-items-center justify-content-center">
         <div class="row align-items-center">
             <div class="col-md-7 text-md-start">
                 <h1 class="display-3 fw-bold mb-3">Página de erro</h1>
