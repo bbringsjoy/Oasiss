@@ -1,0 +1,145 @@
+/* Reset e box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Variáveis de cores */
+:root {
+    --white: #ffffff;
+    --maincolor: #e7f1ff;
+    --pcolor: #dbd8ff;
+    --p2color: #2c3161;
+    --hcolor: #2a33aa;
+    --headcolor: #254c58;
+    --footercolor: #1b2a30;
+}
+
+/* Navbar */
+.navbar {
+    margin: 0;
+    padding: 0;
+    background-color: var(--footercolor) !important;
+}
+
+/* Botão de login */
+.btnlogin {
+    background-color: var(--white) !important;
+    color: var(--headcolor) !important;
+    font-weight: 600;
+}
+
+.btnlogin:hover {
+    background-color: var(--pcolor) !important;
+    color: var(--headcolor) !important;
+    font-weight: 600;
+}
+
+/* Header e links */
+header {
+    background-color: var(--headcolor);
+}
+
+header li a {
+    color: var(--white) !important;
+}
+
+/* Ícone do menu */
+.menu {
+    color: rgb(254, 255, 187);
+}
+
+/* Logo */
+.logohead {
+    width: 120px;
+    height: auto;
+}
+
+/* Corpo da página */
+body {
+    background-color: var(--maincolor);
+}
+
+/* Cards */
+.card {
+    scale: 1.0;
+    transition: all 0.3s;
+    filter: grayscale(70%);
+}
+
+.card:hover {
+    scale: 1.08;
+    transition: all 0.3s;
+    filter: grayscale(0%);
+}
+
+.card:hover img {
+    filter: grayscale(0%);
+}
+
+/* Destaques */
+.destaques {
+    padding-top: 45px;
+}
+
+/* Footer */
+footer {
+    padding-bottom: 10px;
+    max-width: 100%;
+    background-color: var(--footercolor);
+    margin: 0;
+    border: 0;
+}
+
+footer p {
+    color: var(--white);
+    margin: 0;
+}
+
+footer a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 580;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+.btn-outline-white-border {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-login,
+.btn-cadastro {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+.hero-section {
+    background-color: var(--headcolor);
+    color: #fff;
+    padding-top: 10rem !important;
+    padding-bottom: 8rem !important;
+    width: 100%;
+}
+
+
+/* Mantém texto branco e centralizado */
+.hero-section .col-md-5 {
+    color: #fff;
+}
+
