@@ -71,11 +71,12 @@
                 <div class="col-md-3 mb-4">
                     <h5 class="mb-3">Oásis</h5>
                     <p>Conectando pessoas a lugares que inspiram. Hospede-se, descanse, viva momentos únicos.</p>
+                    <div style="height: 20px"></div>
                     <div class="d-flex social-icons mt-3">
                         <a href="https://www.linkedin.com/in/beatriz-gomes-santana-0197b5289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="me-2"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.linkedin.com/in/francesco-gris-053092355/" class="me-2"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.linkedin.com/in/lara-pereira-ferraz-5a2511367/" class="me-2"><i class="fab fa-linkedin-in"></i></a>
                     </div>
+                    
+                    
                 </div>
                 <div class="col-md-3 mb-4">
                     <h5 class="mb-3">Links Rápidos</h5>
@@ -83,6 +84,10 @@
                         <li><a href="index.php?page=sobre" class="text-white text-decoration-none">Sobre Nós</a></li>
                         <li><a href="index.php?page=cadastro" class="text-white text-decoration-none">Seja um Locador</a></li>
                     </ul>
+                    <div style="height: 50px"></div>
+                    <div class="d-flex social-icons mt-3 tst mt-auto">
+                        <a href="https://www.linkedin.com/in/beatriz-gomes-santana-0197b5289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
                 <div class="col-md-3 mb-4">
                     <h5 class="mb-3">Legal</h5>
@@ -92,6 +97,9 @@
                         <li><a href="index.php?page=legal#cookies" class="text-white text-decoration-none">Política de Cookies</a></li>
                         <li><a href="index.php?page=legal#lgpd" class="text-white text-decoration-none">LGPD</a></li>
                     </ul>
+                    <div class="d-flex social-icons mt-3">
+                        <a href="https://www.linkedin.com/in/francesco-gris-053092355/" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
                 <div class="col-md-3 mb-4">
                     <h5 class="mb-3">Contato</h5>
@@ -100,6 +108,9 @@
                         <li class="d-flex align-items-center mb-2"><i class="fas fa-phone-alt me-2"></i> (44) 9 9999-9999</li>
                         <li class="d-flex align-items-center"><i class="fas fa-map-marker-alt me-2"></i> Campo Mourão, PR - Brasil</li>
                     </ul>
+                    <div class="d-flex social-icons mt-3">
+                        <a href="https://www.linkedin.com/in/lara-pereira-ferraz-5a2511367/" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
             <hr class="footer-hr">

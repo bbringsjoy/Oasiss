@@ -5,7 +5,7 @@
                 <h1 class="display-3 fw-bold mb-3">Descubra o espaço <span class="text-secondary-highlight">perfeito</span>, onde e quando quiser.</h1>
                 <p class="lead mb-4">Hospede-se com conforto. Compartilhe experiências com confiança.</p>
                 <div class="d-flex justify-content-center justify-content-md-start">
-                    <a href="index.php?page=servicos" class="btn btn-outline-white-border">Começar agora</a>
+                    <a href="index.php?page=servicos" class="btn btn-outline-white-border btncmc">Começar agora</a>
                 </div>
             </div>
             <div class="col">

@@ -30,7 +30,10 @@
     color: var(--headcolor) !important;
     font-weight: 600;
 }
-
+.tst {
+    position: relative;
+    bottom: 0;
+}
 .btnlogin:hover {
     background-color: var(--pcolor) !important;
     color: var(--headcolor) !important;
@@ -113,7 +116,7 @@ footer a:hover {
 .btn-outline-white-border {
     background-color: transparent;
     color: #fff;
-    border: 1px solid #fff;
+    border: 0.5px solid rgb(153, 153, 153);
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     font-weight: 600;
@@ -141,6 +144,17 @@ footer a:hover {
 /* Mantém texto branco e centralizado */
 .hero-section .col-md-5 {
     color: #fff;
+}
+
+.btncmc {
+    scale: 1.0;
+    transition: 0.3s;
+}
+.btncmc:hover {
+    scale: 1.1;
+    transition: 0.3s;
+    border: 1.5px solid #fff;
+    background-color: #316c7e;
 }
 
 .hero-image img {
