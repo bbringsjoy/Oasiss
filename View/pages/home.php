@@ -11,7 +11,7 @@
             <div class="col">
                 <div class="hero-image-card">
                     <div class="hero-image">
-                        <img src="images/..." alt="Imagem Hero">
+                        <img src="images/icon.png" alt="Imagem Hero">
                         <p class="mt-3">Seu próximo destino começa aqui.</p>
                     </div>
                 </div>
@@ -49,4 +49,21 @@
             </div>
         </div>
     </div>
+    <section class="services-page py-5">
+    <div class="container">
+        <br><br>
+        <h2 class="text-center fw-bold mb-4">Encontre o lugar ideal para você!</h2>
+        <p class="lead text-center mb-5">Pesquise por localização, tipo de imóvel ou comodidades.</p>
+
+        <!-- Barra de busca -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <div class="input-group search-bar">
+                    <input type="text" class="form-control" placeholder="Ex: Casa na praia..." id="searchInput">
+                    <button class="btn btn-search" type="button" id="searchBtn">
+                        <i class="fas fa-search"></i> Pesquisar
+                    </button>
+                </div>
+            </div>
+        </div>
 </section>
