@@ -1,3 +1,8 @@
+<?php
+    session_start()
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -50,6 +55,16 @@
 
     <main class>
         <?php
+        if((!isset($_SESSION["oasis"])) && (!$_POST)){
+            require ".../views/index/login.php";
+        } else if ((!isset($_SESSION["oasis"])) && ($_POST)) {
+
+        } else{
+            
+        }
+
+        ?>
+        <?php
         // Pega o parâmetro 'page' da URL ou define 'home' como padrão
         $pagina = $_GET['page'] ?? 'home';
 
@@ -63,6 +78,7 @@
             include __DIR__ . "/pages/erro.php";
         }
         ?>
+
     </main>
 
     <footer class="text-white pt-5 pb-3">
