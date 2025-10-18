@@ -1,5 +1,5 @@
 <?php
-    session_start()
+session_start()
 
 ?>
 
@@ -9,62 +9,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oásis</title>
+
+    <base href="http://<?=$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']?>">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> <!-- Font Awesome -->
     <link href="images/icon.png" rel="shortcut icon">
 
-    <title>Oásis</title>
+    
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- Animação -->
     <link rel="stylesheet" href="css/style.css">
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid col-12">
-                <a class="navbar-brand" href="index.php?page=home">
-                    <img src="images/logo.png" alt="Logo" class="logohead">
-                </a>
-                <button class="navbar-toggler menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar"><i class="fa-solid fa-bars"></i></span>
-                </button>
-                <div class="listas">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.php?page=home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.php?page=sobre">Sobre</a>
-                            </li>
-                            <div class="d-flex">
-                                <a href="index.php?page=login" class="btn btn-login me-2">
-                                    <i class="fa-solid fa-right-to-bracket me-2"></i>Login
-                                </a>
-                                <a href="index.php?page=cadastro" class="btn btn-cadastro">
-                                    <i class="fa-solid fa-user-plus me-2"></i>Cadastro
-                                </a>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main class>
-        <?php
-        if((!isset($_SESSION["oasis"])) && (!$_POST)){
-            require ".../views/index/login.php";
-        } else if ((!isset($_SESSION["oasis"])) && ($_POST)) {
-
-        } else{
-            
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.inputmask.min.js"></script>
+    <script src="js/jquery.maskedinput-1.2.1.js"></script>
+    <script src="js/parsley.min.js"></script>
+    <script src="js/sweetalert2.js"></script>
+    <script>
+        mostrarSenha = function() {
+            const campo = document.getElementById('senha');
+            if (campo.type === 'password') {
+                campo.type = 'text';
+            } else {
+                campo.type = 'password';
+            }
         }
 
-        ?>
+        //função para mostrar mensagem de erro 
+        mensagem = function(msg, url, icone) {
+            Swal.fire({
+                icon: icone,
+                title: msg,
+                confirmButtonText: "OK",
+            }).then((result) => {
+                location.href = url;
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+
+
+
         <?php
+        if ((!isset($_SESSION["oasis"])) && (!$_POST)) {
+            //não tem sessão nem foi dado post
+            require "pages/login.php";
+        } else if ((!isset($_SESSION["oasis"])) && ($_POST)) {
+            //não tem sessão mas foi dado post
+            $email = trim($_POST["email"] ?? NULL);
+            $senha = trim($_POST["senha"] ?? NULL);
+
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "<script> mensagem('E-mail inválido','index','error');</script>";
+            } else if (empty($senha)) {
+                echo "<script>mensagem('Digite a senha','index','error');</script>";
+            } else {
+
+                require "../controllers/indexController.php";
+                $acao = new IndexController();
+                $acao->verificar($email, $senha);
+            }
+        } else {
+            
+        ?> <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid col-12">
+                        <a class="navbar-brand" href="index.php?page=home">
+                            <img src="images/logo.png" alt="Logo" class="logohead">
+                        </a>
+                        <button class="navbar-toggler menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar"><i class="fa-solid fa-bars"></i></span>
+                        </button>
+                        <div class="listas">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="index.php?page=home">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="index.php?page=sobre">Sobre</a>
+                                    </li>
+                                    <div class="d-flex">
+                                        <a href="index.php?page=login" class="btn btn-login me-2">
+                                            <i class="fa-solid fa-right-to-bracket me-2"></i>Login
+                                        </a>
+                                        <a href="index.php?page=cadastro" class="btn btn-cadastro">
+                                            <i class="fa-solid fa-user-plus me-2"></i>Cadastro
+                                        </a>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                
+
+                <main>
+                    <?php
+                    $param = explode("/",$_GET["param"]);
+                    //print_r($param);
+                    $controller = $param[0] ?? "index";
+                    $acao = $param[1] ?? "index";
+                    $id = $param[2] ?? NULL;
+                    
+                    $controller = ucfirst($controller)."Controller";
+
+                    if (file_exists("../controller/{$controller}.php")) {
+                        require "../controllers/{$controller}.php";
+                        $control = new $controller();
+                        $control->$acao($id);
+                    }
+                    else {
+                        require "../View/pages/erro.php";
+                    }
+                    ?>
+                </main>
+        
+        <?php
+
+        
+        }   
         // Pega o parâmetro 'page' da URL ou define 'home' como padrão
         $pagina = $_GET['page'] ?? 'home';
 
@@ -79,8 +148,6 @@
         }
         ?>
 
-    </main>
-
     <footer class="text-white pt-5 pb-3">
         <div class="container">
             <div class="row mb-4">
@@ -91,8 +158,8 @@
                     <div class="d-flex social-icons mt-3">
                         <a href="https://www.linkedin.com/in/beatriz-gomes-santana-0197b5289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="me-2"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    
-                    
+
+
                 </div>
                 <div class="col-md-3 mb-4">
                     <h5 class="mb-3">Links Rápidos</h5>

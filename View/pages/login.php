@@ -18,26 +18,37 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bodylogin">
+<body>
+    <section class="bodylogin">
 
     <div class="login">
+        <h1 class="user-select-none">Login</h1>
+        <form name="form1" method="POST" data-parsley-validate="">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" class="form-control"
+            required
+            data-parsley-required-message="Preencha o email"
+            data-parsley-type-message="Digite um e-mail válido"
+            placeholder="Digite um email">
+            <br>
 
-        <form action="" method="POST">
-            <h1 class="user-select-none">Login</h1>
 
-            <div class="input-box">
-                <input type="text" name="email" placeholder="Email" required>
-                <i class='bx. bxs-user'></i>
+            <label for="senha">Senha:</label>
+            <div class="input-group mb-3">
+                <input type="password" class="form-control" name="senha" id="senha"
+                placeholder="Digite sua senha" required
+                data-parsley-required-message="Digite uma senha"
+                data-parsley-errors-container="#erro">
+                <button class="btn btn-outline-secondary" type="button" onclick="mostrarSenha()">
+                    <i class="fas fa-eye"></i></button>
             </div>
+            <div id="erro"></div>
+            <br>
+            <button type="submit" class="btn btn-success w-100">
+                <i class="fas fa-check"></i>Fazer Login
+            </button>
 
-            <div class="input-box">
-                <input type="password" name="senha" placeholder="Senha" required>
-                <i class='bx bxs-lock-alt'></i>
-            </div>
 
-
-
-            <button type="submit" class="btn">Login</button>
 
             <div class="cadastro">
                 <p>Não tem uma conta? <a href="cadastro.php">Cadastre-se aqui!</a></p>
@@ -61,7 +72,7 @@
     <script src="https://cdn.jsdelivr.net/npm/fslightbox/index.js" type="module"></script><!-- script lightbox -->
 
 
-
+</section>
 </body>
 
 </html>

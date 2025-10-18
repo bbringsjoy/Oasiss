@@ -17,15 +17,15 @@ class Locadores
 
     #[ManyToOne(targetEntity: Usuarios::class)]
     #[JoinColumn(name: 'usuario_id', referencedColumnName: 'id_usuarios')]
-    private Usuarios $usuario;
+    private Usuarios $usuarios;
 
     
     #[Column(name: 'cpf', length: 14)]
     private string $cpf;
 
-    public function __construct(Usuarios $usuario, string $cpf)
+    public function __construct(Usuarios $usuarios, string $cpf)
     {
-        $this->usuario = $usuario;
+        $this->usuarios = $usuarios;
         $this->cpf = $cpf;
     }
 
@@ -34,9 +34,9 @@ class Locadores
         return $this->id_locadores;
     }
 
-    public function getUsuario(): Usuarios
+    public function getUsuarios(): Usuarios
     {
-        return $this->usuario;
+        return $this->usuarios;
     }
 
     public function getCpf(): string
