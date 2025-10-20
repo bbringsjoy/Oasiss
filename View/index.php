@@ -58,7 +58,10 @@ session_start()
         <?php
         if ((!isset($_SESSION["oasis"])) && (!$_POST)) {
             //não tem sessão nem foi dado post
-            require "pages/login.php";
+            require "pages/home.php";
+            //header('Location: pages/login.php'); // Substitua 'login.php' pelo caminho real da sua página de login
+            //exit; // É crucial usar 'exit' ou 'die' após o header() para garantir que o script pare de executar
+        
         } else if ((!isset($_SESSION["oasis"])) && ($_POST)) {
             //não tem sessão mas foi dado post
             $email = trim($_POST["email"] ?? NULL);
