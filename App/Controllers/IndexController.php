@@ -1,6 +1,6 @@
 <?php
-require "..config/Conexao.php";
-require "..models/Usuario.php";
+require "..Config/Conexao.php";
+require "..Models/Usuario.php";
 
 class IndexController{
 
@@ -15,6 +15,11 @@ class IndexController{
 
     public function index(){
 
+    }
+
+    public function sair(){
+        session_destroy();
+        echo "<script>location.href='index'</script>";
     }
 
     public function verificar($email,$senha){
