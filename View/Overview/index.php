@@ -13,14 +13,14 @@ session_start()
     <base href="http://<?=$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']?>">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> <!-- Font Awesome -->
-    <link href="images/icon.png" rel="shortcut icon">
+    <link href="../images/icon.png" rel="shortcut icon">
 
 
     
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- Animação -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
@@ -54,36 +54,10 @@ session_start()
 
 <body>
 
-
-
-        <?php
-        if ((!isset($_SESSION["oasis"])) && (!$_POST)) {
-            //não tem sessão nem foi dado post
-            require "pages/home.php";
-            //header('Location: pages/login.php'); // Substitua 'login.php' pelo caminho real da sua página de login
-            //exit; // É crucial usar 'exit' ou 'die' após o header() para garantir que o script pare de executar
-        
-        } else if ((!isset($_SESSION["oasis"])) && ($_POST)) {
-            //não tem sessão mas foi dado post
-            $email = trim($_POST["email"] ?? NULL);
-            $senha = trim($_POST["senha"] ?? NULL);
-
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                echo "<script> mensagem('E-mail inválido','index','error');</script>";
-            } else if (empty($senha)) {
-                echo "<script>mensagem('Digite a senha','index','error');</script>";
-            } else {
-
-                require "../controllers/indexController.php";
-                $acao = new IndexController();
-                $acao->verificar($email, $senha);
-            }
-        } else {
-            
-        ?> <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid col-12">
                         <a class="navbar-brand" href="index.php?page=home">
-                            <img src="images/logo.png" alt="Logo" class="logohead">
+                            <img src="../images/logo.png" alt="Logo" class="logohead">
                         </a>
                         <button class="navbar-toggler menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar"><i class="fa-solid fa-bars"></i></span>
@@ -111,6 +85,35 @@ session_start()
                     </div>
                 </nav>
                 
+
+
+
+        <?php
+        if ((!isset($_SESSION["oasis"])) && (!$_POST)) {
+            //não tem sessão nem foi dado post
+            //require "pages/home.php";
+            //header('Location: pages/login.php'); // Substitua 'login.php' pelo caminho real da sua página de login
+            //exit; // É crucial usar 'exit' ou 'die' após o header() para garantir que o script pare de executar
+        
+        } else if ((!isset($_SESSION["oasis"])) && ($_POST)) {
+            //não tem sessão mas foi dado post
+            $email = trim($_POST["email"] ?? NULL);
+            $senha = trim($_POST["senha"] ?? NULL);
+
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "<script> mensagem('E-mail inválido','index','error');</script>";
+            } else if (empty($senha)) {
+                echo "<script>mensagem('Digite a senha','index','error');</script>";
+            } else {
+
+                require "../controllers/indexController.php";
+                $acao = new IndexController();
+                $acao->verificar($email, $senha);
+            }
+        } else {
+            //colocar um filtro pra ver se é adm ou usuario e dps mandar pra pagina de adm ou de usuario
+            
+        ?>
 
                 <main>
                     <?php
