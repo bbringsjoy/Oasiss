@@ -13,11 +13,13 @@ use App\Model\Imoveis;
         {
             $db = new Conexao();
             $pdo = $db->conectar();
-            $this->imovel = new Imoveis($pdo);
+            //$this->imovel = new Imoveis($pdo);
+            //auteracao para que nao afete o doctrine
         }
 
         public function index($id){
             //form de cadastro e edicao
+            require "..View/LoginAdm/index.php";
         }
 
         public function salvar(){

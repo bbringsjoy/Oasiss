@@ -55,7 +55,7 @@ class Imoveis
 
     private $pdo; //trilha 2 aula 3
 
-    public function __construct(Locadores $locador, string $titulo, string $descricao, string $enderecoCompleto, string $cidade, string $precoDiario, int $nmQuartos, int $nmBanheiros, int $maxHospedes, string $nomeFoto, ?string $comodidades = null, $pdo)
+    public function __construct(Locadores $locador, string $titulo, string $descricao, string $enderecoCompleto, string $cidade, string $precoDiario, int $nmQuartos, int $nmBanheiros, int $maxHospedes, string $nomeFoto, ?string $comodidades = null)
     {
         $this->locador = $locador;
         $this->titulo = $titulo;
@@ -68,8 +68,13 @@ class Imoveis
         $this->maxHospedes = $maxHospedes;
         $this->nomeFoto = $nomeFoto;
         $this->comodidades = $comodidades;
-        $this->pdo = $pdo; //trilha 2 aula 3
     }
+
+    public function setPDO($pdo): void
+{
+    $this->pdo = $pdo;
+    //auteracao para que nao afete o doctrine
+}
 
     public function getIdImoveis(): int
     {
