@@ -53,7 +53,9 @@ class Imoveis
     #[Column(name: 'comodidades', type: 'string', nullable: true)]
     private ?string $comodidades; 
 
-    public function __construct(Locadores $locador, string $titulo, string $descricao, string $enderecoCompleto, string $cidade, string $precoDiario, int $nmQuartos, int $nmBanheiros, int $maxHospedes, string $nomeFoto, ?string $comodidades = null)
+    private $pdo; //trilha 2 aula 3
+
+    public function __construct(Locadores $locador, string $titulo, string $descricao, string $enderecoCompleto, string $cidade, string $precoDiario, int $nmQuartos, int $nmBanheiros, int $maxHospedes, string $nomeFoto, ?string $comodidades = null, $pdo)
     {
         $this->locador = $locador;
         $this->titulo = $titulo;
@@ -66,6 +68,7 @@ class Imoveis
         $this->maxHospedes = $maxHospedes;
         $this->nomeFoto = $nomeFoto;
         $this->comodidades = $comodidades;
+        $this->pdo = $pdo; //trilha 2 aula 3
     }
 
     public function getIdImoveis(): int
