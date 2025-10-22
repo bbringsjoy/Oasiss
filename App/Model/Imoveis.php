@@ -91,5 +91,14 @@ class Imoveis
         return $this->comodidades;
     }
 
+    //trilhas
+
+    //public function listarCategoria() {
+    //    $sql = "select * from categoria order by descricao";
+    //    $consulta = $this->pdo->prepare($sql);
+    //    $consulta->execute();
+
+    //    return $consulta->fetchAll(PDO::FETCH_OBJ);
+    //}
     
 }
