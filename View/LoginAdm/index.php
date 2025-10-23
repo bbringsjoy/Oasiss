@@ -136,6 +136,7 @@ session_start()
                         <a href="https://www.linkedin.com/in/beatriz-gomes-santana-0197b5289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="me-2"><i class="fab fa-linkedin-in"></i></a>
                     </div>
 
+                
 
                 </div>
                 <div class="col-md-3 mb-4">
