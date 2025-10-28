@@ -106,7 +106,7 @@ session_start()
                 echo "<script>mensagem('Digite a senha','index','error');</script>";
             } else {
 
-                require "../controllers/indexController.php";
+                require "../../Controllers/IndexController.php";
                 $acao = new IndexController();
                 $acao->verificar($email, $senha);
             }

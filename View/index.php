@@ -59,7 +59,7 @@ session_start()
     <?php
     if ((!isset($_SESSION["oasis"])) && (!$_POST)) {
         //não tem sessão nem foi dado post
-        require "pages/home.php";
+        require "Overview/pages/home.php";
         //header('Location: pages/login.php'); // Substitua 'login.php' pelo caminho real da sua página de login
         //exit; // É crucial usar 'exit' ou 'die' após o header() para garantir que o script pare de executar
 
@@ -74,7 +74,7 @@ session_start()
             echo "<script>mensagem('Digite a senha','index','error');</script>";
         } else {
 
-            require "../controllers/indexController.php";
+            require "../Controllers/IndexController.php";
             $acao = new IndexController();
             $acao->verificar($email, $senha);
         }
@@ -140,13 +140,13 @@ session_start()
     $pagina = $_GET['page'] ?? 'home';
 
     // Caminho absoluto para as páginas dentro de View/pages
-    $caminho_pagina = __DIR__ . "/pages/{$pagina}.php";
+    $caminho_pagina = __DIR__ . "/Overview/pages/{$pagina}.php";
 
     // Inclui a página se existir, senão inclui erro.php
     if (file_exists($caminho_pagina)) {
         include $caminho_pagina;
     } else {
-        include __DIR__ . "/pages/erro.php";
+        include __DIR__ . "/Overview/pages/erro.php";
     }
     ?>
 
