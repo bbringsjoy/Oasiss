@@ -1,7 +1,4 @@
 <?php
-
-use App\Model\Imoveis;
-
     require "../Config/Conexao.php";
     require "../Model/Imoveis.php";
 
@@ -24,7 +21,7 @@ use App\Model\Imoveis;
 
         public function salvar(){
             //pagina q salva produtos
-            require "..?View/LoginAdm/salvar.php";
+            require "..View/LoginAdm/salvar.php";
         }
 
         public function excluir($id){
