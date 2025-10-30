@@ -1,6 +1,6 @@
 <?php
     require "../Config/Conexao.php";
-    require "../Model/Imoveis.php";
+    require "../Models/Imoveis.php";
 
     class ImoveisController{
 
@@ -10,8 +10,8 @@
         {
             $db = new Conexao();
             $pdo = $db->conectar();
-            //$this->imovel = new Imoveis($pdo);
-            //auteracao para que nao afete o doctrine
+            $this->imovel = new Imovel($pdo);
+            
         }
 
         public function index($id){

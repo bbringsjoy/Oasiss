@@ -88,9 +88,9 @@ session_start()
         
                 <main>
                     <?php
-                    $param = explode("/",$_GET["param"]);
+                    $param = explode("/",$_GET["param" ?? ""]);
                     //print_r($param);
-                    $controller = $param[0] ?? "index";
+                    $controller = $param[0] ?? "painel";
                     $acao = $param[1] ?? "index";
                     $id = $param[2] ?? NULL;
                     
