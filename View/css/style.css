@@ -41,8 +41,6 @@
 }
 /* Tela de Login */
 
-/* Tela de login */
-
 .bodylogin{
     display: flex;
      justify-content: center;
@@ -59,12 +57,12 @@
  width: 420px;
  background-color: rgba(58, 128, 150, 0.4);
  border:2px solid var(--white);
- backdrop-filter: blur (15px);
+backdrop-filter: blur(15px);
  box-shadow: 0 10px rgba(0, 0, 0,.2);
  color: var(--white);
  border-radius: 10px;
  padding: 30px 40px;
- backdrop-filter: blur (15px);
+
  
  h1{
      font-size:36px;
@@ -143,6 +141,28 @@
      }
     }
  }
+
+ /* Estilo para garantir o alinhamento vertical e a altura correta do input-group */
+.input-senha-custom .form-control {
+    /* Corrigir a altura para se alinhar com o botão padrão do Bootstrap */
+    height: calc(1.5em + 0.75rem + 2px); /* Altura padrão do form-control no Bootstrap 5 */
+    /* Garante que o input ocupe o espaço corretamente */
+    flex: 1 1 auto;
+    /* Altera o raio da borda para se adequar ao que parece ser o seu design */
+    border-radius: 0.375rem 0 0 0.375rem !important; 
+    /* Você pode ajustar o 0.375rem para o valor que deseja no canto esquerdo. */
+}
+
+/* Garante que o botão tenha um raio de borda apenas no lado direito */
+.input-senha-custom .btn {
+    border-radius: 0 0.375rem 0.375rem 0 !important;
+}
+
+/* Estilo para o ícone (olho) dentro do botão (se necessário) */
+.input-senha-custom .btn i {
+    /* Garante que o ícone esteja no centro do botão */
+    line-height: 1; 
+}
 
 
 /* Header e links */
