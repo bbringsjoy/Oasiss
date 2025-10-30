@@ -34,73 +34,74 @@
 
 
                 <label for="senha">Senha:</label>
+<div class="input-group mb-3 **input-senha-custom**"> <input type="password" class="form-control" name="senha" id="senha"
+        placeholder="Digite sua senha" required
+        data-parsley-required-message="Digite uma senha"
+        data-parsley-errors-container="#erro">
 
-                <div class="input-group mb-3">
-                    <input type="password" class="form-control" name="senha" id="senha"
-                        placeholder="Digite sua senha" required
-                        data-parsley-required-message="Digite uma senha"
-                        data-parsley-errors-container="#erro">
-                    <div class="input-group-prepend"></div>
-                    <button class="btn btn-outline-secondary" type="button" onclick="mostrarSenha()">
-                        <i class="fas fa-eye"></i></button>
-                </div>
-
-                <div class="input-group mb-3">
-                <input type="password" class="form-control" name="senha" id="senha"
-                        placeholder="Digite sua senha" required
-                        data-parsley-required-message="Digite uma senha"
-                        data-parsley-errors-container="#erro">
-                <button 
-                    type="button" 
-                    onclick="mostrarSenha()"
-                    class="flex-shrink-0 px-4 py-3 bg-white text-gray-600 
-                           border border-gray-300 rounded-r-lg 
-                           hover:bg-gray-50 focus:outline-none focus:ring-2 
-                           focus:ring-offset-2 focus:ring-indigo-500 transition duration-150"
-                    aria-label="Mostrar/Esconder Senha"
-                >
-                    <i id="toggleIcon" class="fas fa-eye"></i>
-                </button></div>
+    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+        <i class="fas fa-eye" id="toggleIcon"></i>
+    </button>
+</div>
 
                 <div id="erro"></div>
                 <br>
                 <button type="submit" class="btn btn-success w-100">
-                    <i class="fas fa-check"></i>Fazer Login
+                    <i class="fas fa-check"></i> Fazer Login
                 </button>
 
 
-
-                <div class="cadastro">
-                    <p>Não tem uma conta? <a href="cadastro.php">Cadastre-se aqui!</a></p>
+                <div class="cadastro" style="text-align:center">
+                    <p>Não tem uma conta? <a class="cadastrese" href="cadastro.php">Cadastre-se aqui!</a></p>
                 </div>
+
             </form>
 
         </div>
 
         <script>
-        /**
-         * Alterna a visibilidade da senha e o ícone do botão.
-         */
-        function mostrarSenha() {
-            const senhaInput = document.getElementById('senha');
-            const toggleIcon = document.getElementById('toggleIcon');
-            
-            // Verifica o tipo atual do campo
-            if (senhaInput.type === 'password') {
-                // Se for 'password', muda para 'text' (revela a senha)
-                senhaInput.type = 'text';
-                // Muda o ícone para olho riscado
-                toggleIcon.classList.remove('fa-eye');
-                toggleIcon.classList.add('fa-eye-slash');
-            } else {
-                // Se for 'text', muda para 'password' (esconde a senha)
-                senhaInput.type = 'password';
-                // Muda o ícone de volta para olho aberto
-                toggleIcon.classList.remove('fa-eye-slash');
-                toggleIcon.classList.add('fa-eye');
+            /**
+             * Alterna a visibilidade da senha e o ícone do botão.
+             */
+            function mostrarSenha() {
+                const senhaInput = document.getElementById('senha');
+                const toggleIcon = document.getElementById('toggleIcon');
+
+                // Verifica o tipo atual do campo
+                if (senhaInput.type === 'password') {
+                    // Se for 'password', muda para 'text' (revela a senha)
+                    senhaInput.type = 'text';
+                    // Muda o ícone para olho riscado
+                    toggleIcon.classList.remove('fa-eye');
+                    toggleIcon.classList.add('fa-eye-slash');
+                } else {
+                    // Se for 'text', muda para 'password' (esconde a senha)
+                    senhaInput.type = 'password';
+                    // Muda o ícone de volta para olho aberto
+                    toggleIcon.classList.remove('fa-eye-slash');
+                    toggleIcon.classList.add('fa-eye');
+                }
             }
-        }
-    </script>
+
+            // Novo: Adiciona o listener de evento para vincular a função ao botão
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const toggleButton = document.getElementById('togglePassword');
+                if (toggleButton) {
+                    toggleButton.addEventListener('click', mostrarSenha);
+                }
+            });
+        </script>
+
+
+
+
+
+
+
+
+
+
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
         <script>
