@@ -14,8 +14,11 @@ $max_hospedes = $_POST["max_hospedes"] ?? NULL;
 $comodidades = $_POST["comodidades"] ?? NULL; 
 
 if (!empty($preco_diario)) {
+    //1500.00 -> 1500.00
     $preco_diario = str_replace(".", "", $preco_diario);
+    //1500,00 -> 1500.00
     $preco_diario = str_replace(",", ".", $preco_diario);
+
     $_POST["preco_diario"] = $preco_diario;
 }
 
@@ -36,10 +39,10 @@ if ((empty($id_imoveis) && (empty($_FILES["nome_foto"]["name"])))) {
 
 if (!empty($_FILES["nome_foto"]["name"])) {
     // gera o nome da imagem para a tabela
-    $nome_arquivo_foto = md5($titulo) . time() . ".jpg";
-    $_POST["nome_foto"] = $nome_arquivo_foto;
+    $nome_foto = md5($titulo) . time() . ".jpg";
+    $_POST["nome_foto"] = $nome_foto;
 } else if (!empty($id_imoveis)) {
-    $_POST["nome_foto"] = $nome_foto_atual_do_banco;
+    $_POST["nome_foto"] = $oasis;
 }
 
 $msg_status = $this->imovel->salvar(); 
@@ -51,11 +54,11 @@ if ($msg_status == 1) {
     // se teve upload da imagem, move o arquivo
     if (!empty($_FILES["nome_foto"]["name"])) {
         // Certifique-se de que a pasta 'arquivos/' exista e tenha permissão de escrita
-        move_uploaded_file($_FILES["nome_foto"]["tmp_name"], "arquivos/".$_POST["nome_foto"]);
+        move_uploaded_file($_FILES["nome_foto"]["tmp_name"], "../arquivos/".$_POST["nome_foto"]);
     }
 }
 else {
-    $msg_texto = "Erro ao alterar/salvar o registro do imóvel";
+    $msg_texto = "Erro ao salvar o imóvel";
 }
 
 // mostra a mensagem e sai

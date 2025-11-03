@@ -65,12 +65,6 @@ session_start()
                         <div class="listas">
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="index.php?page=home">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="index.php?page=sobre">Sobre</a>
-                                    </li>
                                     <div class="d-flex">
                                         <!-- botao para deslogar -->
                                         <a href="" class="btn btn-login me-2">
@@ -88,22 +82,8 @@ session_start()
         
                 <main>
                     <?php
-                    $param = explode("/",$_GET["param" ?? ""]);
-                    //print_r($param);
-                    $controller = $param[0] ?? "painel";
-                    $acao = $param[1] ?? "index";
-                    $id = $param[2] ?? NULL;
-                    
-                    $controller = ucfirst($controller)."Controller";
 
-                    if (file_exists("../controller/{$controller}.php")) {
-                        require "../controllers/{$controller}.php";
-                        $control = new $controller();
-                        $control->$acao($id);
-                    }
-                    else {
-                        require "../View/pages/erro.php";
-                    }
+                    require "pages/painel.php";
                     ?>
                 </main>
         
