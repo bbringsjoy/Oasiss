@@ -1,3 +1,12 @@
+<?php
+
+    if(!empty($id)){
+        $dados = $this->imovel->editar($id);
+    }
+
+?>
+
+
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -150,7 +159,6 @@
             allowNegative: false
         });
 
-        // Adaptação: Se você usou 'precoDiario' na sua função JS e 'preco_diario' no PHP, 
-        // alterei a função JS para 'preco_diario' para bater com o name do input.
+       
     });
 </script>

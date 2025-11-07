@@ -10,11 +10,6 @@ class Imovel {
         $this->pdo = $pdo;
     }
 
-    /**
-     * Busca um único imóvel pelo seu ID.
-     * @param int $id
-     * @return object|false
-     */
     public function editar($id) {
         $sql = "SELECT * FROM {$this->tabela} WHERE id_imoveis = :id LIMIT 1";
         $consulta = $this->pdo->prepare($sql);
@@ -24,10 +19,6 @@ class Imovel {
         return $consulta->fetch(PDO::FETCH_OBJ);
     }
 
-    /**
-     * Lista todos os imóveis ordenados por título.
-     * @return array
-     */
     public function listar() {
         $sql = "SELECT * FROM {$this->tabela} ORDER BY titulo";
         $consulta = $this->pdo->prepare($sql);
@@ -36,25 +27,16 @@ class Imovel {
         return $consulta->fetchAll(PDO::FETCH_OBJ);
     }
 
-    /*
-     * Mantenha a função de listarCategoria se você ainda precisar da tabela 'categoria'.
-     * Se não precisar, você pode remover este método.
-     */
+    
     public function listarLocadores() {
-        $sql = "SELECT * FROM locador ORDER BY nome"; // Assumindo uma tabela 'locador'
+        $sql = "SELECT * FROM locador ORDER BY nome"; // Uma tabela 'locador'
         $consulta = $this->pdo->prepare($sql);
         $consulta->execute();
 
         return $consulta->fetchAll(PDO::FETCH_OBJ);
     }
 
-    /**
-     * Salva (Insere ou Atualiza) um imóvel.
-     * Assume que os dados vêm de um array/POST.
-     * @return bool
-     */
     public function salvar() {
-        // Campos que serão inseridos/atualizados
         $campos = [
             'titulo', 'descricao', 'endereco_completo', 'cidade', 
             'preco_diario', 'nm_quartos', 'nm_banheiros', 'max_hospedes', 

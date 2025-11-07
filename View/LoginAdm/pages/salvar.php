@@ -53,7 +53,6 @@ if ($msg_status == 1) {
     
     // se teve upload da imagem, move o arquivo
     if (!empty($_FILES["nome_foto"]["name"])) {
-        // Certifique-se de que a pasta 'arquivos/' exista e tenha permissão de escrita
         move_uploaded_file($_FILES["nome_foto"]["tmp_name"], "../arquivos/".$_POST["nome_foto"]);
     }
 }
