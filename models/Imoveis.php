@@ -28,14 +28,6 @@ class Imovel {
     }
 
     
-    public function listarLocadores() {
-        $sql = "SELECT * FROM locador ORDER BY nome"; // Uma tabela 'locador'
-        $consulta = $this->pdo->prepare($sql);
-        $consulta->execute();
-
-        return $consulta->fetchAll(PDO::FETCH_OBJ);
-    }
-
     public function salvar() {
         $campos = [
             'titulo', 'descricao', 'endereco_completo', 'cidade', 

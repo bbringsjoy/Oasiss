@@ -10,19 +10,20 @@ $preco_diario = $_POST["preco_diario"] ?? NULL;
 $nm_quartos = $_POST["nm_quartos"] ?? NULL;
 $nm_banheiros = $_POST["nm_banheiros"] ?? NULL;
 $max_hospedes = $_POST["max_hospedes"] ?? NULL;
+$nome_foto = $_POST["nome_foto"] ?? NULL;
 
 $comodidades = $_POST["comodidades"] ?? NULL; 
 
-if (!empty($preco_diario)) {
+
     //1500.00 -> 1500.00
     $preco_diario = str_replace(".", "", $preco_diario);
     //1500,00 -> 1500.00
     $preco_diario = str_replace(",", ".", $preco_diario);
 
     $_POST["preco_diario"] = $preco_diario;
-}
 
-// Validação dos Campos Obrigatórios
+
+// validação dos campos principais
 if ((empty($id_imoveis) && (empty($_FILES["nome_foto"]["name"])))) {
     echo "<script>mensagem('Por favor, selecione uma imagem para o imóvel','error');</script>";
     exit;
@@ -37,19 +38,15 @@ if ((empty($id_imoveis) && (empty($_FILES["nome_foto"]["name"])))) {
     exit;
 } 
 
-if (!empty($_FILES["nome_foto"]["name"])) {
-    // gera o nome da imagem para a tabela
-    $nome_foto = md5($titulo) . time() . ".jpg";
-    $_POST["nome_foto"] = $nome_foto;
-} else if (!empty($id_imoveis)) {
-    $_POST["nome_foto"] = $oasis;
-}
+  if (!empty($_FILES["nome_foto"]["name"])) {
+        $_POST["nome_foto"] = md5($nome) . time() . ".jpg";
+    }
 
-$msg_status = $this->imovel->salvar(); 
+$msg = $this->imovel->salvar(); 
 
 // resultado e Upload do Arquivo
-if ($msg_status == 1) {
-    $msg_texto = "Imóvel salvo com sucesso!";
+if ($msg == 1) {
+    $msg = "Imóvel salvo com sucesso!";
     
     // se teve upload da imagem, move o arquivo
     if (!empty($_FILES["nome_foto"]["name"])) {
@@ -57,10 +54,10 @@ if ($msg_status == 1) {
     }
 }
 else {
-    $msg_texto = "Erro ao salvar o imóvel";
+    $msg = "Erro ao salvar o imóvel";
 }
 
 // mostra a mensagem e sai
-echo "<script>mensagem('{$msg_texto}','imovel','question');</script>";
+echo "<script>mensagem('{$msg}','imovel','question');</script>";
 exit;
 ?>
