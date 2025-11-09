@@ -3,7 +3,7 @@
 class Imovel {
 
     private $pdo;
-    private $tabela = "imoveis"; // Nome da tabela no banco
+    private $tabela = "imoveis"; // nome da tabela
 
     public function __construct($pdo)
     {
@@ -32,16 +32,19 @@ class Imovel {
         $campos = [
             'titulo', 'descricao', 'endereco_completo', 'cidade', 
             'preco_diario', 'nm_quartos', 'nm_banheiros', 'max_hospedes', 
-            'nome_foto', 'comodidades', 'locador_id'
+            'nome_foto', 'comodidades', 'locador_id',
+            'destaque'
         ];
 
         if (empty($_POST["id_imoveis"])) {
-            // insert
+            // novo imovel
+            
             $colunas = implode(", ", $campos);
             $binds = ":" . implode(", :", $campos);
             
-            $sql = "INSERT INTO {$this->tabela} (id_imoveis, {$colunas}) 
-                    VALUES (NULL, {$binds})";
+            // CORREÇÃO CRÍTICA: Removido 'id_imoveis' e 'NULL'
+            $sql = "INSERT INTO {$this->tabela} ({$colunas}) 
+                    VALUES ({$binds})";
             
             $consulta = $this->pdo->prepare($sql);
             
@@ -50,7 +53,7 @@ class Imovel {
             }
 
         } else {
-            //atualizar
+            // atualiza a tabela
             $set_sql = [];
             foreach ($campos as $campo) {
                 $set_sql[] = "{$campo} = :{$campo}";
@@ -68,7 +71,6 @@ class Imovel {
             $consulta->bindParam(":id_imoveis", $_POST["id_imoveis"], PDO::PARAM_INT);
         }
 
-        return $consulta->execute();
     }
 
     public function excluir($id) {

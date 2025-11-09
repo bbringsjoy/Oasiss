@@ -114,14 +114,6 @@
                             <option value="N">Não</option>
                         </select>
                     </div>
-                    <div class="col-12 col-md-2">
-                        <label for="ativo">Disponível:</label>
-                        <select name="ativo" id="ativo" class="form-control" required data-parsley-required-message="Selecione uma opção">
-                            <option value=""></option>
-                            <option value="S">Sim</option>
-                            <option value="N">Não</option>
-                        </select>
-                    </div>
                 </div>
                 <br>
                 <div class="row">
