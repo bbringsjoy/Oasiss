@@ -16,12 +16,13 @@
 
         public function index($id){
             //form de cadastro e edicao
-            require "..View/LoginAdm/index.php";
+            require "..View/LoginAdm/pages/painel.php";
         }
 
         public function salvar(){
             //pagina q salva produtos
-            require "..View/LoginAdm/salvar.php";
+            require "..View/LoginAdm/pages/salvar.php";
+
         }
 
         public function excluir($id){
@@ -29,7 +30,7 @@
         }
 
         public function listar(){
-
+            require "..View/LoginAdm/pages/listar.php";
         }
     }
 ?>
