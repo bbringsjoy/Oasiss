@@ -17,19 +17,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
 
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-            <div class="float-start">
+    <div class="card painel">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
                 <h2>Cadastro de Imóveis</h2>
             </div>
-            
-                <a href="imoveis/salvar" class="btn btn-success">
+            <div>
+                <a href="imoveis/salvar" class="btn btn-primary">
                     Adicionar Imóvel
                 </a>
-                <a href="imoveis/listar" class="btn btn-success">
+                <a href="imoveis/listar" class="btn btn-primary">
                     Listar
                 </a>
-            
+            </div>
         </div>
         <div class="card-body">
             <form name="formCadastro" method="post" action="imoveis/salvar" enctype="multipart/form-data"
@@ -118,7 +118,7 @@
                 <br>
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-success float-end">
+                        <button type="submit" class="btn btn-primary float-end">
                             <i class="fas fa-check"></i> Salvar/Atualizar Registro
                         </button>
                     </div>
