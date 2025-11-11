@@ -53,30 +53,36 @@ session_start()
 </head>
 
 <body>
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                    <div class="container-fluid col-12">
-                        <a class="navbar-brand" href="index.php?page=home">
-                            <img src="../images/logo.png" alt="Logo" class="logohead">
-                        </a>
-                        <button class="navbar-toggler menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar"><i class="fa-solid fa-bars"></i></span>
-                        </button>
-                        <div class="listas">
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <div class="d-flex">
-                                        <!-- botao para deslogar -->
-                                        <a href="" class="btn text-light me-2">
-                                            <i class="fa-solid fa-right-to-bracket me-2"></i>Logout
-                                    </div>
-                                </ul>
+            <div class="container-fluid col-12">
+                <a class="navbar-brand" href="index.php?page=home">
+                    <img src="../images/logo.png" alt="Logo" class="logohead">
+                </a>
+                <button class="navbar-toggler menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar"><i class="fa-solid fa-bars"></i></span>
+                </button>
+                <div class="listas">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.php?page=home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.php?page=sobre">Sobre</a>
+                            </li>
+                            <div class="d-flex">
+                                <a href="index.php?page=login" class="btn btn-login me-2">
+                                    <i class="fa-solid fa-right-to-bracket me-2"></i>Login
+                                </a>
+                                <a href="index.php?page=cadastro" class="btn btn-cadastro">
+                                    <i class="fa-solid fa-user-plus me-2"></i>Cadastro
+                                </a>
                             </div>
-                        </div>
+                        </ul>
                     </div>
-                </nav>
-                
-
+                </div>
+            </div>
+        </nav>
 
 
         
