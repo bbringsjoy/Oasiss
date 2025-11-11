@@ -67,7 +67,7 @@ session_start()
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <div class="d-flex">
                                         <!-- botao para deslogar -->
-                                        <a href="" class="btn btn-login me-2">
+                                        <a href="" class="btn text-light me-2">
                                             <i class="fa-solid fa-right-to-bracket me-2"></i>Logout
                                     </div>
                                 </ul>
@@ -83,7 +83,7 @@ session_start()
                 <main>
                     <?php
 
-                    require "pages/painel.php";
+                    include_once "pages/painel.php";
                     ?>
                 </main>
         

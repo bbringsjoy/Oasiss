@@ -22,14 +22,14 @@
             <div class="float-start">
                 <h2>Cadastro de Imóveis</h2>
             </div>
-            <div class="float-end">
+            
                 <a href="imoveis/salvar" class="btn btn-success">
                     Adicionar Imóvel
                 </a>
                 <a href="imoveis/listar" class="btn btn-success">
                     Listar
                 </a>
-            </div>
+            
         </div>
         <div class="card-body">
             <form name="formCadastro" method="post" action="imoveis/salvar" enctype="multipart/form-data"

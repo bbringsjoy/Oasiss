@@ -39,9 +39,7 @@
         data-parsley-required-message="Digite uma senha"
         data-parsley-errors-container="#erro">
 
-    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-        <i class="fas fa-eye" id="toggleIcon"></i>
-    </button>
+    
 </div>
 
                 <div id="erro"></div>
