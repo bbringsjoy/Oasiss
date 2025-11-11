@@ -1,4 +1,4 @@
-<div class="card">
+<div>
     <div class="card-header">
         <h2 class="float-start">Lista de Imóveis Cadastrados</h2>
         <div class="float-end">
