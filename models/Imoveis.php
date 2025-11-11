@@ -20,7 +20,22 @@ class Imovel {
     }
 
     public function listar() {
-        $sql = "SELECT * FROM {$this->tabela} ORDER BY titulo";
+        // Incluindo a tabela 'locadores' e 'usuarios' para trazer o nome do locador
+        $sql = "
+            SELECT 
+                i.*, 
+                l.cpf AS locador_cpf,
+                u.nome_completo AS nome_locador -- Assumindo que o nome está na tabela 'usuarios'
+            FROM 
+                {$this->tabela} i
+            JOIN 
+                locadores l ON i.locador_id = l.id_locadores
+            JOIN
+                usuarios u ON l.usuario_id = u.id_usuarios
+            ORDER BY 
+                i.titulo
+        ";
+        
         $consulta = $this->pdo->prepare($sql);
         $consulta->execute();
 

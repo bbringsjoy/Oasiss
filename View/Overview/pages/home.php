@@ -11,13 +11,17 @@
             <div class="col">
                 <div class="hero-image-card">
                     <div class="hero-image">
-                        <img src="../../images/icon.png" alt="Imagem Hero">
+                        <img src="images/icon.png" alt="Imagem Hero">
                         <p class="mt-3">Seu próximo destino começa aqui.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
+
+<section class="casas">
+
 </section>
 
 <section class="home-section py-5">
