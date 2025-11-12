@@ -67,7 +67,7 @@ CREATE TABLE auditoria_precos_imoveis (
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id_usuarios)
 );
 
-DELIMITER $$
+
 
 CREATE TRIGGER trg_auditoria_preco_imovel
 AFTER UPDATE ON imoveis
@@ -92,11 +92,7 @@ BEGIN
             'ALTERAÇÃO DE PREÇO'
         );
     END IF;
-END$$
-
-DELIMITER ;
-
-DELIMITER $$
+END ; 
 
 CREATE PROCEDURE inserir_imoveis_padrao(IN p_locador_id INT)
 BEGIN
@@ -118,9 +114,7 @@ BEGIN
         ('Apartamento Central', 'Apartamento moderno no centro da cidade', 'Av. Principal, 500', 'São Paulo', 280.00, 2, 1, 5, 'apto.jpg', 'Wi-Fi, Garagem', p_locador_id),
         ('Chalé da Serra', 'Chalé aconchegante em meio à natureza', 'Estrada da Serra, km 12', 'Gramado', 400.00, 2, 1, 4, 'chale.jpg', 'Lareira, Varanda, Estacionamento', p_locador_id),
         ('Cabana do Lago', 'Cabana com acesso direto ao lago', 'Rodovia do Lago, 250', 'Capitólio', 500.00, 2, 1, 6, 'cabana.jpg', 'Cozinha, Wi-Fi, Vista para o lago', p_locador_id);
-END$$
-
-DELIMITER ;
+END ;
 
 -- Chamada da procedure (exemplo)
 -- CALL inserir_imoveis_padrao(3);
@@ -134,7 +128,6 @@ CREATE INDEX idx_imoveis_preco_diario ON imoveis (preco_diario);
 CREATE INDEX idx_imoveis_locador ON imoveis (locador_id);
 
 
-DELIMITER $$
 
 CREATE FUNCTION verificar_disponibilidade_imovel(
     p_id_imovel INT,
@@ -164,7 +157,5 @@ BEGIN
     ELSE
         RETURN TRUE;
     END IF;
-END$$
-
-DELIMITER ;
+END ;
 
