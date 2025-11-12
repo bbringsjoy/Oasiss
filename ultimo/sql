@@ -23,11 +23,7 @@ CREATE TABLE imoveis (
     endereco_completo VARCHAR(255),
     cidade VARCHAR(100),
     preco_diario DECIMAL(10,2),
-    nm_quartos INT,
-    nm_banheiros INT,
-    max_hospedes INT,
     nome_foto VARCHAR(255),
-    comodidades TEXT,
     locador_id INT,
     FOREIGN KEY (locador_id) REFERENCES locadores(id_locadores)
 );
@@ -107,11 +103,7 @@ BEGIN
         endereco_completo, 
         cidade, 
         preco_diario, 
-        nm_quartos, 
-        nm_banheiros, 
-        max_hospedes, 
         nome_foto, 
-        comodidades, 
         locador_id
     )
     VALUES

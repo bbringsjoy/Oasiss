@@ -74,21 +74,6 @@
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-12 col-md-2">
-                        <label for="nm_quartos">Quartos:</label>
-                        <input type="number" name="nm_quartos" id="nm_quartos" class="form-control" min="1" required
-                        data-parsley-required-message="Qtde. de quartos">
-                    </div>
-                    <div class="col-12 col-md-2">
-                        <label for="nm_banheiros">Banheiros:</label>
-                        <input type="number" name="nm_banheiros" id="nm_banheiros" class="form-control" min="1" required
-                        data-parsley-required-message="Qtde. de banheiros">
-                    </div>
-                    <div class="col-12 col-md-2">
-                        <label for="max_hospedes">Máx. Hóspedes:</label>
-                        <input type="number" name="max_hospedes" id="max_hospedes" class="form-control" min="1" required
-                        data-parsley-required-message="Máximo de hóspedes">
-                    </div>
                     <div class="col-12 col-md-3">
                         <label for="preco_diario">Preço Diário (R$):</label>
                         <input type="text" name="preco_diario" id="preco_diario" class="form-control" required 
@@ -102,10 +87,6 @@
                 </div> 
                 <br>
                 <div class="row">
-                    <div class="col-12 col-md-8">
-                        <label for="comodidades">Comodidades (separar por vírgula):</label>
-                        <input type="text" name="comodidades" id="comodidades" class="form-control">
-                    </div>
                     <div class="col-12 col-md-2">
                         <label for="destaque">Destaque:</label>
                         <select name="destaque" id="destaque" class="form-control" required data-parsley-required-message="Selecione uma opção">

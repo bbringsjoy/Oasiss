@@ -46,8 +46,7 @@ class Imovel {
     public function salvar() {
         $campos = [
             'titulo', 'descricao', 'endereco_completo', 'cidade', 
-            'preco_diario', 'nm_quartos', 'nm_banheiros', 'max_hospedes', 
-            'nome_foto', 'comodidades', 'locador_id',
+            'preco_diario', 'nome_foto', 'locador_id',
             'destaque'
         ];
 
