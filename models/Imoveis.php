@@ -84,8 +84,8 @@ class Imovel {
                 $consulta->bindParam(":$campo", $_POST[$campo]);
             }
             $consulta->bindParam(":id_imoveis", $_POST["id_imoveis"], PDO::PARAM_INT);
+            return $consulta->execute();
         }
-
     }
 
     public function excluir($id) {
