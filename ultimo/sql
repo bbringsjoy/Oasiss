@@ -69,9 +69,9 @@ CREATE TABLE auditoria_precos_imoveis (
 
 CREATE TABLE categoria_imovel (
     id_categoria INT AUTO_INCREMENT PRIMARY KEY,
-    id_imovel INT NOT NULL,
-    categoria ENUM('apartamento', 'casa') NOT NULL
-    FOREIGN KEY (id_imovel) REFERENCES imoveis(id_imoveis),
+    imovel_id INT NOT NULL,
+    categoria ENUM('apartamento', 'casa') NOT NULL,
+    FOREIGN KEY (imovel_id) REFERENCES imoveis(id_imoveis)
 );
 
 CREATE TRIGGER trg_auditoria_preco_imovel
