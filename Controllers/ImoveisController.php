@@ -16,12 +16,12 @@
 
         public function index($id){
             //form de cadastro e edicao
-            require "../View/LoginAdm/pages/painel.php";
+            require "../View/Imoveis/painel.php";
         }
 
         public function salvar(){
             //pagina q salva produtos
-            require "../View/LoginAdm/pages/salvar.php";
+            require "../View/Imoveis/salvar.php";
         }
 
         public function excluir($id){
@@ -33,7 +33,7 @@
             $imoveis = $this->imovel->listar(); 
             
             // 2. CARREGA A VIEW, disponibilizando a variável $imoveis
-            require "../View/LoginAdm/pages/listar.php";
+            require "../View/Imoveis/listar.php";
         }
     }
 ?>

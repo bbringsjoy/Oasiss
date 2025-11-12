@@ -14,22 +14,21 @@
         }
 
         public function index($id) {
-            require "../View/Overview/pages/cadastro.php";
+            require "../View/Usuarios/cadastro.php";
         }
 
         public function excluir($id) {
-            require "../views/usuario/excluir.php";
+            require "../View/Usuarios/excluir.php";
         }
 
         public function salvar() {
-            require "../View/Overview/pages/salvar.php";
+            require "../View/Usuarios/salvar.php";
         }
 
         public function listar() {
-            require "../views/usuario/listar.php";
+            require "../View/Usuarios/listarUsuarios.php";
         }
 
-        //alterar nome das pastas e organizar os views
     }
 
 
