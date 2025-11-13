@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show de Feita - Painel de Controle</title>
+    <title>Doce Mix - Painel de Controle</title>
     <base href="http://<?= $_SERVER["SERVER_NAME"] . $_SERVER["SCRIPT_NAME"] ?>">
 
     <link rel="stylesheet" href="css/all.min.css">
@@ -16,6 +16,7 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
+    <link href="imagens/logoteste.png" rel="shortcut icon">
     
     <script src="js/bootstrap.bundle.min.js"></script>
     
@@ -66,10 +67,10 @@ session_start();
 
 <body>
     <?php
-    if ((!isset($_SESSION["feira"]["id"])) && (!$_POST)) {
+    if ((!isset($_SESSION["Doce"]["id"])) && (!$_POST)) {
 
         include "../View/Index/index.php";
-    } else if ((!isset($_SESSION["feira"]["id"])) && ($_POST)) {
+    } else if ((!isset($_SESSION["Doce"]["id"])) && ($_POST)) {
 
         $email = trim($_POST["email"] ?? NULL);
         $senha = trim($_POST["senha"] ?? NULL);
@@ -88,6 +89,43 @@ session_start();
     } else {
 
     ?>
+
+    <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index">
+                    <img src="images/logoteste.png" alt="DoceMix">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categoria">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="produto">Doces</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="usuario">Usuários</a>
+                        </li>
+
+                    </ul>
+                    <div class="d-flex">
+                        <p>
+                            Olá <?= $_SESSION["Doce"]["nome"] ?>
+                            <a href="index/sair" title="Sair" class="btn btn-sm btn-danger">
+                                <i class="fas fa-power-off"></i> Sair
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
         <main class="container">
             <?php
@@ -112,7 +150,7 @@ session_start();
         </main>
 
         <footer class="footer">
-            <p class="text-center">DoceMix </p>
+            <p class="text-center"> DoceMix - Todos os direitos reservados </p>
         </footer>
 
     <?php

@@ -38,12 +38,12 @@ if (!empty($id)) {
                     <input type="text" name="id" id="id" class="form-control" readonly value="<?= $id ?>">
                 </div>
                 <div class="col-12 col-md-6">
-                    <label for="nome">Nome do Usuário:</label>
+                    <label for="nome">Nome:</label>
                     <input type="text" name="nome" id="nome" required class="form-control" value="<?= $nome ?>"
                         data-parsley-required-message="Preencha o nome">
                 </div>
                 <div class="col-12 col-md-5">
-                    <label for="email">E-mail do Usuário:</label>
+                    <label for="email">E-mail:</label>
                     <input type="email" name="email" id="email" required class="form-control" value="<?= $email ?>"
                         data-parsley-required-message="Preencha o e-mail"
                         data-parsley-type-message="Digite um e-mail válido">

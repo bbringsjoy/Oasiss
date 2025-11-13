@@ -27,7 +27,7 @@
                 echo "<script>mensagem('Erro de senha','index','error');</script>";
                 exit;
             } else {
-                $_SESSION["feira"] = array("id"=>$dados->id, "nome"=>$dados->nome);
+                $_SESSION["Doce"] = array("id"=>$dados->id, "nome"=>$dados->nome);
                 echo "<script>location.href='index';</script>";
                 exit;
             }

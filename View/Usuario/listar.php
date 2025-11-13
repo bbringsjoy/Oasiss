@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="float-start">Lista de Usuários</h2>
+        <h2 class="float-start">Listagem de Usuários</h2>
         <div class="float-end">
             <a href="usuario" title="Novo Registro" class="btn btn-success">
                 <i class="fas fa-file"></i> Novo Registro
