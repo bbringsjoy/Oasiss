@@ -21,10 +21,6 @@
                         <td>ID</td>
                         <td>Título</td>
                         <td>Endereço (Cidade)</td>
-                        <td>Quartos</td>
-                        <td>Banheiros</td>
-                        <td>Hóspedes</td>
-                        <td>Comodidades</td>
                         <td>Preço Diário</td>
                         <td>Destaque</td>
                         <td>Disponível</td>
@@ -57,12 +53,6 @@
                                 </td>
 
                                 <td><?= $dados->endereco_completo ?> (<?= $dados->cidade ?>)</td>
-
-                                <td class="text-center"><?= $dados->nm_quartos ?></td>
-                                <td class="text-center"><?= $dados->nm_banheiros ?></td>
-                                <td class="text-center"><?= $dados->max_hospedes ?></td>
-
-                                <td style="max-width: 150px; font-size: 0.85em;"><?= $dados->comodidades ?></td>
 
                                 <td>R$ <?= number_format($dados->preco_diario, 2, ",", ".") ?></td>
 

@@ -7,12 +7,7 @@ $descricao = $_POST["descricao"] ?? NULL;
 $endereco_completo = $_POST["endereco_completo"] ?? NULL;
 $cidade = $_POST["cidade"] ?? NULL;
 $preco_diario = $_POST["preco_diario"] ?? NULL;
-$nm_quartos = $_POST["nm_quartos"] ?? NULL;
-$nm_banheiros = $_POST["nm_banheiros"] ?? NULL;
-$max_hospedes = $_POST["max_hospedes"] ?? NULL;
 $nome_foto = $_POST["nome_foto"] ?? NULL;
-
-$comodidades = $_POST["comodidades"] ?? NULL; 
 
 
     //1500.00 -> 1500.00
