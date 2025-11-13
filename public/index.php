@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -14,8 +14,11 @@ session_start();
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/sweetalert2.min.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    
     <script src="js/bootstrap.bundle.min.js"></script>
+    
     <script src="js/jquery-3.5.1.min.js"></script>
 
     <script src="js/jquery.inputmask.min.js"></script>
@@ -79,48 +82,12 @@ session_start();
             exit;
         }
 
-        require "../controllers/IndexController.php";
+        require "../Controller/IndexController.php";
         $acao = new IndexController();
         $acao->verificar($email, $senha);
     } else {
 
     ?>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index">
-                    <img src="images/logo.png" alt="Show de Feira">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="categoria">Categorias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="produto">Produtos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="usuario">Usuários</a>
-                        </li>
-
-                    </ul>
-                    <div class="d-flex">
-                        <p>
-                            Olá <?= $_SESSION["feira"]["nome"] ?>
-                            <a href="index/sair" title="Sair" class="btn btn-sm btn-danger">
-                                <i class="fas fa-power-off"></i> Sair
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </nav>
 
         <main class="container">
             <?php
@@ -153,6 +120,7 @@ session_start();
     }
 
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>
