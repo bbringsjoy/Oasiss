@@ -21,15 +21,19 @@
         }
 
         public function verificar($email, $senha) {
+            $dadosUsuario// era só dados
+             = $this->usuario->getUsuario($email);
 
-            $dados = $this->usuario->getUsuario($email);
-            if (!password_verify($senha, $dados->senha)) {
-                echo "<script>mensagem('Erro de senha','index','error');</script>";
-                exit;
+            if (empty($dadosUsuario->id)) {
+                echo "<script>mensagem('Usuário inválido','index','error');</script>";
+            } else if (!password_verify($senha, $dadosUsuario//era só dados
+            ->senha)) {
+                echo "<script>mensagem('Usuário inválido','index','error');</script>";
             } else {
-                $_SESSION["Doce"] = array("id"=>$dados->id, "nome"=>$dados->nome);
-                echo "<script>location.href='index';</script>";
-                exit;
+                $_SESSION["Doce"] = array("id"=>$dadosUsuario//era só dados
+                ->id, "nome"=>$dadosUsuario->nome);//mudou dados pra dadosUsuario
+                echo "<script>location.href='index'</script>";
+                
             }
 
         }
