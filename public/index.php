@@ -102,16 +102,16 @@ session_start();
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="index">Home</a>
+                            <a class="nav-link" href="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="categoria">Categorias</a>
+                            <a class="nav-link" href="Categoria">Categorias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="produto">Doces</a>
+                            <a class="nav-link" href="Doces">Doces</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="usuario">Usuários</a>
+                            <a class="nav-link" href="Usuario">Usuários</a>
                         </li>
 
                     </ul>
@@ -137,7 +137,7 @@ session_start();
             $id = $param[2] ?? NULL;
 
             $controller = ucfirst($controller)."Controller";
-            $page = "../controllers/{$controller}.php";
+            $page = "../Controller/{$controller}.php";
 
             if (file_exists($page)) {
 

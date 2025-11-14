@@ -21,7 +21,7 @@ body {
 
     .card-header {
         border-bottom: 1px solid #ffbcbc;
-        background-color: rgb(255, 237, 237);
+        background-color: #ffeded;
         img {width: 80px;}
     }
 }
