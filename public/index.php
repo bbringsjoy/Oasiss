@@ -16,7 +16,7 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
-    <link href="imagens/logoteste.png" rel="shortcut icon">
+
     
     <script src="js/bootstrap.bundle.min.js"></script>
     
@@ -67,27 +67,32 @@ session_start();
 
 <body>
     <?php
-    if ((!isset($_SESSION["Doce"]["id"])) && (!$_POST)) {
+    if ((!isset($_SESSION["Doce"]//["id"] não tem no do burns
+    )) && (!$_POST)) {
 
         include "../View/Index/index.php";
-    } else if ((!isset($_SESSION["Doce"]["id"])) && ($_POST)) {
+    } else if ((!isset($_SESSION["Doce"]//["id"] não tem no do burns
+    )) && ($_POST)) {
 
         $email = trim($_POST["email"] ?? NULL);
         $senha = trim($_POST["senha"] ?? NULL);
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo "<script>mensagem('E-mail inválido','index','error');</script>";
-            exit;
+        //apaguei o exit            
         } else if (empty($senha)) {
             echo "<script>mensagem('Preencha a senha','index','error');</script>";
-            exit;
-        }
+            
+        }//apagou o exit
+        else {
 
         require "../Controller/IndexController.php";
         $acao = new IndexController();
         $acao->verificar($email, $senha);
+        }
     } else {
-
+      
+     //fecha a chave aqui pra tirar o navbar do código e ele aparecer no index(e apaga a chave da linha 162). ou seja o problema tá nesse código de cima, nada que está dentro dele vai aparecer na tela.
     ?>
 
     <nav class="navbar navbar-expand-lg">
@@ -154,9 +159,7 @@ session_start();
         </footer>
 
     <?php
-
-    }
-
+        }  //descomentar para o login
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
