@@ -1,6 +1,6 @@
 <?php
 
-    class Produto {
+    class Doce {
 
         private $pdo;
 
@@ -10,7 +10,7 @@
         }
 
         public function editar($id) {
-            $sql = "select * from produto where id = :id limit 1";
+            $sql = "select * from doce where id = :id limit 1";
             $consulta = $this->pdo->prepare($sql);
             $consulta->bindParam(":id", $id);
             $consulta->execute();
@@ -19,7 +19,7 @@
         }
 
         public function listar() {
-            $sql = "select * from produto order by nome";
+            $sql = "select * from doce order by nome";
             $consulta = $this->pdo->prepare($sql);
             $consulta->execute();
 
@@ -38,7 +38,7 @@
     
 
             if (empty($_POST["id"])) {
-                $sql = "insert into produto (id, nome, categoria_id, descricao, imagem, valor, destaque, ativo) 
+                $sql = "insert into doce (id, nome, categoria_id, descricao, imagem, valor, destaque, ativo) 
                 values (NULL, :nome, :categoria_id, :descricao, :imagem, :valor, :destaque, :ativo)";
                 $consulta = $this->pdo->prepare($sql);
                 $consulta->bindParam(":nome", $_POST["nome"]);
@@ -49,7 +49,7 @@
                 $consulta->bindParam(":destaque", $_POST["destaque"]);
                 $consulta->bindParam(":ativo", $_POST["ativo"]);
             } else {
-                $sql = "update produto set nome = :nome, categoria_id = :categoria_id, descricao = :descricao, imagem = :imagem, valor = :valor, 
+                $sql = "update doce set nome = :nome, categoria_id = :categoria_id, descricao = :descricao, imagem = :imagem, valor = :valor, 
                     destaque = :destaque, ativo = :ativo where id = :id limit 1";
                 $consulta = $this->pdo->prepare($sql);
                 $consulta->bindParam(":nome", $_POST["nome"]);
@@ -66,7 +66,7 @@
         }
 
         public function excluir($id) {
-            $sql = "delete from produto where id = :id limit 1";
+            $sql = "delete from doce where id = :id limit 1";
             $consulta = $this->pdo->prepare($sql);
             $consulta->bindParam(":id", $id);
 

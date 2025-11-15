@@ -1,31 +1,31 @@
 <?php
     require "../Config/Conexao.php";
-    require "../Model/Doces.php";
+    require "../Model/Doce.php";
 
-    class ProdutoController {
+    class DoceController {
 
-        private $produto;
+        private $doce;
 
         public function __construct()
         {
             $db = new Conexao();
             $pdo = $db->conectar();
-            $this->produto = new Produto($pdo);
+            $this->doce = new Doce($pdo);
         }
 
          public function index($id) {
-            require "../View/Doces/index.php";
+            require "../View/Doce/index.php";
         }
 
         public function excluir($id) {
-            require "../View/Doces/excluir.php";
+            require "../View/Doce/excluir.php";
         }
 
         public function salvar() {
-            require "../View/Doces/salvar.php";
+            require "../View/Doce/salvar.php";
         }
 
         public function listar() {
-            require "../View/Doces/listar.php";
+            require "../View/Doce/listar.php";
         }
     }

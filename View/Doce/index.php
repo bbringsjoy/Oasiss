@@ -3,7 +3,7 @@
 $nome = $categoria_id = $descricao = $imagem = $valor = $destaque = $ativo = NULL;
 
 if (!empty($id)) {
-    $dados = $this->produto->editar($id);
+    $dados = $this->doce->editar($id);
 
     if (empty($dados)) {
         echo "<script>mensagem('Registro não encontrado!','error');</script>";
@@ -33,35 +33,33 @@ if (!empty($id)) {
     <div class="card-header">
         <h2 class="float-start">Cadastro de Doces</h2>
         <div class="float-end">
-            <a href="produto" title="Novo Registro" class="btn btn-success">
+            <a href="doce" title="Novo Registro" class="btn btn-success">
                 <i class="fas fa-file"></i> Novo Registro
             </a>
 
-            <a href="produto/listar" title="Listar" class="btn btn-success">
+            <a href="Doce/listar" title="Listar" class="btn btn-success">
                 <i class="fas fa-file"></i> Listar
             </a>
         </div>
     </div>
     <div class="card-body">
-        <form name="formCadastro" method="post" action="produto/salvar" data-parsley-validate="" enctype="multipart/form-data">
+        <form name="formCadastro" method="post" action="Doce/salvar" data-parsley-validate="" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-12 col-md-1">
                     <label for="id">ID:</label>
                     <input type="text" name="id" id="id" class="form-control" readonly value="<?= $id ?>">
                 </div>
                 <div class="col-12 col-md-8">
-                    <label for="nome">Nome do Produto:</label>
+                    <label for="nome">Nome do Doce:</label>
                     <input type="text" name="nome" id="nome" required class="form-control" value="<?= $nome ?>"
-                        data-parsley-required-message="Preencha o nome do produto">
+                        data-parsley-required-message="Preencha o nome do doce">
                 </div>
                 <div class="col-12 col-md-3">
                     <label for="categoria_id">Categoria:</label>
                     <select name="categoria_id" id="categoria_id" class="form-control" required data-parsley-required-message="Selecione uma Categoria">
-                        <option value="B">Bolo</option>
-                        <option value="Br">Brownie</option>
-                        <option value="C">Cookies</option>
+                        <option value=""></option>
                         <?php
-                            $categorias = $this->produto->listarCategoria();
+                            $categorias = $this->doce->listarCategoria();
                             foreach($categorias as $dados) {
                                 echo "<option value='{$dados->id}'>{$dados->descricao}</option>";
                             }

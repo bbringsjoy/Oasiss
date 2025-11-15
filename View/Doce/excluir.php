@@ -5,7 +5,7 @@
         exit;
     }
 
-    $msg = $this->produto->excluir($id);
+    $msg = $this->doce->excluir($id);
 
     if ($msg == 1) $msg = "Registro excluído com sucesso!";
     else $msg = "Erro ao excluir registro";

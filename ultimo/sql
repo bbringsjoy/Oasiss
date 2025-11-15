@@ -21,7 +21,7 @@ CREATE TABLE usuario (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO usuario (nome, email, senha, ativo) VALUES
-('Administrador DoceMix', 'admin@docemix.com', '$2y$10$ExemploSenhaHash', 'S');
+('nome', 'nome@gmail.com', 'senha', 'S');
 
 
 -- TABELA DE PRODUTOS (DOCE)
@@ -114,7 +114,7 @@ CREATE INDEX idx_venda_cliente ON venda (cliente_id);
 CREATE INDEX idx_venda_status ON venda (status);
 CREATE INDEX idx_doce_ativo ON doce (ativo);
 CREATE INDEX idx_cliente_ativo ON cliente (ativo);
-
+ -- erro ao criar os índices
 
 -- FUNÇÃO DE DISPONIBILIDADE
 
@@ -136,3 +136,13 @@ BEGIN
     RETURN disponivel;
 END;
 
+-- alterações feitas no banco --
+
+ALTER TABLE cliente
+DROP COLUMN telefone;
+
+ALTER TABLE doce
+ADD COLUMN destaque CHAR(1) NOT NULL DEFAULT 'N';
+
+ALTER TABLE categoria
+CHANGE COLUMN nome descricao VARCHAR(255) NOT NULL;

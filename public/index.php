@@ -17,6 +17,9 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
 
+    <link rel="icon" href="/images/logoteste.png" type="image/png">
+    <link rel="shortcut icon" href="/images/logoteste.png">
+
     
     <script src="js/bootstrap.bundle.min.js"></script>
     
@@ -92,13 +95,13 @@ session_start();
         }
     } else {
       
-     //fecha a chave aqui pra tirar o navbar do código e ele aparecer no index(e apaga a chave da linha 162). ou seja o problema tá nesse código de cima, nada que está dentro dele vai aparecer na tela.
+     
     ?>
 
     <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index">
-                    <img src="images/logoteste.png" alt="DoceMix">
+                    <img src="images/logoteste.png" alt="DoceMix" class="w-25">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -113,7 +116,7 @@ session_start();
                             <a class="nav-link" href="Categoria">Categorias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Doces">Doces</a>
+                            <a class="nav-link" href="Doce">Doces</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Usuario">Usuários</a>
@@ -159,7 +162,7 @@ session_start();
         </footer>
 
     <?php
-        }  //descomentar para o login
+       }  
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>

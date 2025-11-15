@@ -1,6 +1,6 @@
 <div class="card">
     <p class="text-center">
-        Olá seja-bem vindo: <?=$_SESSION["DoceMix"]["nome"]?>
+        Olá seja-bem vindo: <?=$_SESSION["Doce"]["nome"]?>
     </p>
 </div>
 <div class="card">
@@ -10,24 +10,24 @@
     <div class="card-body">
         <div class="row">
             <div class="col-12 col-md-3">
-                <a href="categoria/cadastro" title="Categorias" class="btn btn-outline-success w-100">
+                <a href="Categoria/listar" title="Categorias" class="btn btn-outline-success w-100">
                     <i class="fas fa-tags fa-2x"></i>
                     <br>
                     Categorias
                 </a>
             </div>
             <div class="col-12 col-md-3">
-                <a href="cadastro/produto" title="Produtos" class="btn btn-outline-success w-100">
+                <a href="Doce/listar" title="Doces" class="btn btn-outline-success w-100">
                     <i class="fas fa-gift fa-2x"></i>
                     <br>
-                    Produtos
+                    Doces
                 </a>
             </div>
             <div class="col-12 col-md-3">
-                <a href="cadastro/usuario" title="Usuários" class="btn btn-outline-success w-100">
+                <a href="Usuario/listar" title="Usuários" class="btn btn-outline-success w-100">
                     <i class="fas fa-user fa-2x"></i>
                     <br>
-                    Usuário
+                    Usuários
                 </a>
             </div>
             <div class="col-12 col-md-3">
