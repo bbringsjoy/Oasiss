@@ -18,10 +18,10 @@
         echo "<script>mensagem('Por favor, selecione uma imagem','error');</script>";
         exit;
     } else if (empty($nome)) {
-        echo "<script>mensagem('Por favor, preencha o nome do produto','error');</script>";
+        echo "<script>mensagem('Por favor, preencha o nome do doce','error');</script>";
         exit;
     } else if (empty($descricao)) {
-        echo "<script>mensagem('Por favor, preencha a descrição do produto','error');</script>";
+        echo "<script>mensagem('Por favor, preencha a descrição do doce','error');</script>";
         exit;
     } else if (empty($ativo)) {
         echo "<script>mensagem('Por favor, selecione a opção ativo','error');</script>";
@@ -32,7 +32,7 @@
         $_POST["imagem"] = md5($nome) . time() . ".jpg";
     }
 
-    $msg = $this->produto->salvar();
+    $msg = $this->doce->salvar();
 
     if ($msg == 1) {
         $msg ="Registro salvo com sucesso!";
@@ -42,5 +42,5 @@
     }
     else $msg = "Erro ao alterar/salvar registro";
 
-    echo "<script>mensagem('{$msg}','produto','question');</script>";
+    echo "<script>mensagem('{$msg}','doce','question');</script>";
     exit;
