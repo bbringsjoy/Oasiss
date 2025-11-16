@@ -3,6 +3,80 @@ body {
     color: #333;
 }
 
+:root{
+    --white: #ffffff;
+    --black: #000;
+    --maincolor: #3e2311;
+    --thircolor: #f9edb4;
+    --quadcolor: #9e0e0e;
+    --extra: #FF69B4;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    display: list-item;
+    unicode-bidi: isolate;
+    float: left;
+    position: relative;
+    border-right: solid 1px var(--thircolor);
+}
+
+header {
+    background-color: var(--maincolor);
+    padding: 20px 0;    
+    display: block;
+    unicode-bidi: isolate;
+    /*header fixo*/
+    position: sticky;
+    top: 0; 
+    z-index: 1000;
+}
+
+.pheader {
+    margin: 0;
+    color: var(--thircolor) !important;
+}
+
+.container {
+    width: 100% !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.nav-container {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    width: 100% !important;
+}
+
+.imglogo {
+    width: 80px;
+}
+
+.imglogin {
+    width: 358px !important;
+}
+
+.tstlogin {
+    padding: 0;
+    border: 0;
+}
+
+.capa {
+    padding: 0 !important;
+    border: 0 !important;
+    margin: 0 !important;
+    img {
+    width: 100%;
+}}
+
 .login {
     width: 380px;
     padding: 100px 10px;
@@ -15,13 +89,11 @@ body {
 }
 
 .card {
-    box-shadow: 0 0 10px #ffadad;
+    box-shadow: 0 0 10px var(--maincolor);
     border-radius: 0;
     margin: 30px 0;
-
     .card-header {
-        border-bottom: 1px solid #ffbcbc;
-        background-color: #ffeded;
+        border-bottom: 1px solid var(--maincolor);
         img {width: 80px;}
     }
 }
@@ -46,26 +118,81 @@ body {
     margin-top: -15px;
 }
 
-.footer, .navbar {
-    background: #FFF;
-    padding: 10px 0 10px;
-    box-shadow: 0 0 10px #ccc;
+.navbar {
+    padding: 0 !important;
+    background-color: var(--maincolor);
+}
+
+.footer {
+    padding: 30px 0;
+    background-color: var(--maincolor);
+    text-align: center;
+    color: var(--thircolor) !important;
+    a {
+        color: var(--thircolor) !important;
+        text-decoration: none !important;
+    }
+}
+
+.footer {
+
+
+
+    a {
+
+
+        margin: 20px;
+        &:hover {
+            color: #F00;
+        }
+    }
 }
 
 
+/*botão primário (marrom)*/
 
-
-
-.btnsecond {
-    background: rgb(240, 122, 122) !important;
-    color: rgb(255, 255, 255);
-    border: 0 solid black !important;
-    transition: 0.3s;
+.btnprm {
+    background-color: var(--white) !important;
+    color: var(--quadcolor);
+    border: 1px solid var(--quadcolor) !important;
+    transition: all 0.3s;
 }
 
-.btnsecond:hover {
+.btnprm:hover {
     box-shadow: 1px solid black;
     transition: 0.3s;
-        background: rgb(233, 78, 78) !important;
-        box-shadow: 0 0 7px rgb(218, 154, 154);
+    color: var(--thircolor) !important;
+    background-color: rgb(104, 11, 11) !important;
+}
+
+/*botão secundário (branco)*/
+
+.btnscd {
+    background-color: var(--maincolor) !important;
+    color: var(--thircolor);
+    border: 0 solid var(--black) !important;
+    transition: 0.3s;
+}
+
+.btnscd:hover {
+    box-shadow: 1px solid black;
+    transition: 0.3s;
+    color: var(--thircolor) !important;
+    background-color: rgb(104, 11, 11) !important;
+}
+
+/*botão terciário (pra fundo escuro)*/
+
+.btntrc {
+    background-color: transparent !important;
+    color: var(--thircolor);
+    border: 1px solid var(--thircolor) !important;
+    transition: 0.3s;
+}
+
+.btntrc:hover {
+    box-shadow: 1px solid var(--thircolor);
+    transition: 0.3s;
+    color: var(--maincolor) !important;
+    background-color: var(--thircolor) !important;
 }

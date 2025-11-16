@@ -97,11 +97,11 @@ session_start();
       
      
     ?>
-
-    <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
+<header>
+    <nav class="navbar navbar-expand-lg container">
+            <div class="nav-container">
                 <a class="navbar-brand" href="index">
-                    <img src="images/logoteste.png" alt="DoceMix" class="w-25">
+                    <img src="images/logotransparente.png" alt="DoceMix" class="imglogo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -123,19 +123,20 @@ session_start();
                         </li>
 
                     </ul>
-                    <div class="d-flex">
-                        <p>
-                            Olá <?= $_SESSION["Doce"]["nome"] ?>
-                            <a href="index/sair" title="Sair" class="btn btn-sm btn-danger">
+                </div>
+                <div class="d-flex">
+                        <p class="pheader">
+                            Olá <?= $_SESSION["Doce"]["nome"] ?>!
+                            <a href="index/sair" title="Sair" class="btn btntrc">
                                 <i class="fas fa-power-off"></i> Sair
                             </a>
                         </p>
                     </div>
-                </div>
             </div>
         </nav>
+        </header>
 
-        <main class="container">
+        <main>
             <?php
             $controller = $_GET["param"] ?? NULL;
             $param = explode("/", $controller);
@@ -157,9 +158,62 @@ session_start();
             ?>
         </main>
 
-        <footer class="footer">
-            <p class="text-center"> DoceMix - Todos os direitos reservados </p>
-        </footer>
+        <footer class="footer text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-3">DoceMix</h5>
+                    <p>Descubra a nossa coleção de doces artesanais, feitos com amor para celebrar o seu dia!</p>
+                    <div style="height: 20px"></div>
+                    <div class="d-flex social-icons mt-3">
+                        <a href="https://www.linkedin.com/in/beatriz-gomes-santana-0197b5289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+
+
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.php?page=sobre" class="text-white text-decoration-none">Sobre Nós</a></li>
+                        <li><a href="index.php?page=cadastro" class="text-white text-decoration-none">Seja um Locador</a></li>
+                    </ul>
+                    <div style="height: 50px"></div>
+                    <div class="d-flex social-icons mt-3 tst mt-auto">
+                        <a href="https://www.linkedin.com/in/beatriz-gomes-santana-0197b5289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-3">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.php?page=legal-footer" class="text-white text-decoration-none">Política de Privacidade</a></li>
+                        <li><a href="index.php?page=legal-footer#politica-privacidade" class="text-white text-decoration-none">Política de Privacidade</a></li>
+                        <li><a href="index.php?page=legal-footer#termos-uso" class="text-white text-decoration-none">Termos de Uso</a></li>
+                        <li><a href="index.php?page=legal-footer#politica-cookies" class="text-white text-decoration-none">Política de Cookies</a></li>
+                        <li><a href="index.php?page=legal-footer#lgpd" class="text-white text-decoration-none">LGPD</a></li>
+
+                    </ul>
+                    <div class="d-flex social-icons mt-3">
+                        <a href="https://www.linkedin.com/in/francesco-gris-053092355/" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-3">Contato</h5>
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-center mb-2"><i class="fas fa-envelope me-2"></i> contato@docemix.com</li>
+                        <li class="d-flex align-items-center mb-2"><i class="fas fa-phone-alt me-2"></i> (44) 9 9999-9999</li>
+                        <li class="d-flex align-items-center"><i class="fas fa-map-marker-alt me-2"></i> Campo Mourão, PR - Brasil</li>
+                    </ul>
+                    <div class="d-flex social-icons mt-3">
+                        <a href="https://www.linkedin.com/in/lara-pereira-ferraz-5a2511367/" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-hr">
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <p class="mb-0">&copy; 2025 DoceMix. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
     <?php
        }  
