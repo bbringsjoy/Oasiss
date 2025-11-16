@@ -1,3 +1,9 @@
+<section class="capa">
+    <div>
+        <img src="images/capa.png">
+    </div>
+</section>
+
 <div class="card">
     <p class="text-center">
         Olá seja-bem vindo: <?=$_SESSION["Doce"]["nome"]?>

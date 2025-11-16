@@ -20,11 +20,11 @@ if (!empty($id)) {
     <div class="card-header">
         <h2 class="float-start">Cadastro de Categorias</h2>
         <div class="float-end">
-            <a href="categoria" title="Novo Registro" class="btn btn-success">
+            <a href="categoria" title="Novo Registro" class="btn btn-success btnscd">
                 <i class="fas fa-file"></i> Novo Registro
             </a>
 
-            <a href="categoria/listar" title="Listar" class="btn btn-success">
+            <a href="categoria/listar" title="Listar" class="btn btn-success btnscd">
                 <i class="fas fa-file"></i> Listar
             </a>
         </div>
@@ -54,7 +54,7 @@ if (!empty($id)) {
                 </div>
             </div>
             <br>
-            <button type="submit" class="btn btn-success float-end">
+            <button type="submit" class="btn btn-success btnscd float-end">
                 <i class="fas fa-check"></i> Salvar/Atualizar Registro
             </button>
         </form>
