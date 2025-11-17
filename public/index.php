@@ -136,7 +136,7 @@ session_start();
         </nav>
         </header>
 
-        <main>
+        <main class="container">
             <?php
             $controller = $_GET["param"] ?? NULL;
             $param = explode("/", $controller);
