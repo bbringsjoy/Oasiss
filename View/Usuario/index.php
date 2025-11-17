@@ -21,11 +21,11 @@ if (!empty($id)) {
     <div class="card-header">
         <h2 class="float-start">Cadastro de Usuários</h2>
         <div class="float-end">
-            <a href="usuario" title="Novo Registro" class="btn btn-success btnscd">
+            <a href="usuario" title="Novo Registro" class="btn btn-success btntrc">
                 <i class="fas fa-file"></i> Novo Registro
             </a>
 
-            <a href="usuario/listar" title="Listar" class="btn btn-success btnscd">
+            <a href="usuario/listar" title="Listar" class="btn btn-success btntrc">
                 <i class="fas fa-file"></i> Listar
             </a>
         </div>

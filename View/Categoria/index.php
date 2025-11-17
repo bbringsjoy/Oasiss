@@ -20,11 +20,11 @@ if (!empty($id)) {
     <div class="card-header">
         <h2 class="float-start">Cadastro de Categorias</h2>
         <div class="float-end">
-            <a href="categoria" title="Novo Registro" class="btn btn-success btnscd">
+            <a href="categoria" title="Novo Registro" class="btn btn-success btntrc">
                 <i class="fas fa-file"></i> Novo Registro
             </a>
 
-            <a href="categoria/listar" title="Listar" class="btn btn-success btnscd">
+            <a href="categoria/listar" title="Listar" class="btn btn-success btntrc">
                 <i class="fas fa-file"></i> Listar
             </a>
         </div>
