@@ -146,3 +146,17 @@ ADD COLUMN destaque CHAR(1) NOT NULL DEFAULT 'N';
 
 ALTER TABLE categoria
 CHANGE COLUMN nome descricao VARCHAR(255) NOT NULL;
+
+CREATE PROCEDURE inserir_doces_padrao()
+BEGIN
+    INSERT INTO doce (nome, categoria_id, descricao, valor, imagem, ativo, destaque)
+    VALUES
+    ('Brownie Tradicional', 1, 'Brownie clássico com chocolate meio amargo', 6.50, 'brownie_tradicional.jpg', 'S', 'N'),
+    ('Brownie com Nozes', 1, 'Brownie cremoso com pedaços de nozes', 7.50, 'brownie_nozes.jpg', 'S', 'N'),
+    ('Bolo de Cenoura', 2, 'Bolo de cenoura com cobertura de chocolate', 25.00, 'bolo_cenoura.jpg', 'S', 'S'),
+    ('Bolo Red Velvet', 2, 'Red Velvet com recheio cremoso', 48.00, 'bolo_redvelvet.jpg', 'S', 'N'),
+    ('Cookie Tradicional', 3, 'Cookie crocante com gotas de chocolate', 5.00, 'cookie_tradicional.jpg', 'S', 'N'),
+    ('Cookie Recheado', 3, 'Cookie recheado com Nutella', 8.00, 'cookie_recheado.jpg', 'S', 'S');
+END ;
+
+CALL inserir_doces_padrao();
