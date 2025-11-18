@@ -1,14 +1,11 @@
-<section class="capa">
-    <div>
-        <img src="images/capa.png">
-    </div>
-</section>
 
-<div class="card">
-    <p class="text-center">
+<div class="card d-flex justify-content-center align-items-center" 
+     style="height: 150px; font-size: 22px;">
+    <p class="text-center m-0">
         Olá seja-bem vindo: <?=$_SESSION["Doce"]["nome"]?>
     </p>
 </div>
+
 <div class="card">
     <div class="card-header">
         <h1>Atalhos</h1>
