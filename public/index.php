@@ -127,7 +127,7 @@ session_start();
                 <div class="d-flex">
                         <p class="pheader">
                             Olá <?= $_SESSION["Doce"]["nome"] ?>!
-                            <a href="index/sair" title="Sair" class="btn btnscd">
+                            <a href="index/sair" title="Sair" class="btn btntrc">
                                 <i class="fas fa-power-off"></i> Sair
                             </a>
                         </p>

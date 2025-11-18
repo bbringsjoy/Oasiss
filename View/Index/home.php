@@ -8,7 +8,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h1>Atalhos</h1>
+        <h1 class="titulo">Atalhos</h1>
     </div>
     <div class="card-body">
         <div class="row">
@@ -34,7 +34,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-3">
-                <a href="index/sair" title="Sair" class="btn btn-outline-success w-100">
+                <a href="index/sair" title="Sair" class="btn btn-outline-danger w-100">
                     <i class="fas fa-power-off fa-2x"></i>
                     <br>
                     Sair
