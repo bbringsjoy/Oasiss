@@ -17,8 +17,8 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
 
-    <link rel="icon" href="/images/logoteste.png" type="image/png">
-    <link rel="shortcut icon" href="/images/logoteste.png">
+    <link rel="icon" href="/images/transparente.png" type="image/png">
+    <link rel="shortcut icon" href="/images/logotransparente.png" type="image/png">
 
     
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -127,7 +127,7 @@ session_start();
                 <div class="d-flex">
                         <p class="pheader">
                             Olá <?= $_SESSION["Doce"]["nome"] ?>!
-                            <a href="index/sair" title="Sair" class="btn btntrc">
+                            <a href="index/sair" title="Sair" class="btn btnscd">
                                 <i class="fas fa-power-off"></i> Sair
                             </a>
                         </p>
@@ -163,7 +163,7 @@ session_start();
             <div class="row mb-4">
                 <div class="col-md-3 mb-4">
                     <h5 class="mb-3">DoceMix</h5>
-                    <p>Descubra a nossa coleção de doces artesanais, feitos com amor para celebrar o seu dia!</p>
+                    <p class="text-aling">Descubra a nossa coleção de doces artesanais, feitos com amor para celebrar o seu dia!</p>
                     <div style="height: 20px"></div>
                     <div class="d-flex social-icons mt-3">
                         <a href="https://www.linkedin.com/in/beatriz-gomes-santana-0197b5289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="me-2"><i class="fab fa-linkedin-in"></i></a>
@@ -175,7 +175,9 @@ session_start();
                     <h5 class="mb-3">Links Rápidos</h5>
                     <ul class="list-unstyled">
                         <li><a href="index.php?page=sobre" class="text-white text-decoration-none">Sobre Nós</a></li>
-                        <li><a href="index.php?page=cadastro" class="text-white text-decoration-none">Seja um Locador</a></li>
+                    </ul>
+                    <ul class="list">
+                        <li><a href="index.php?page=sobre" class="text-white text-decoration-none">Página de Administrador</a></li>
                     </ul>
                     <div style="height: 50px"></div>
                     <div class="d-flex social-icons mt-3 tst mt-auto">
@@ -214,6 +216,7 @@ session_start();
             </div>
         </div>
     </footer>
+
 
     <?php
        }  
