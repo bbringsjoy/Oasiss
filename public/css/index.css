@@ -116,9 +116,6 @@ header {
         border-bottom: 1px solid var(--maincolor);
         img {width: 80px;}
         background-color: var(--maincolor);
-        h2 {
-            color: var(--thircolor);
-        }
     }
 }
 
