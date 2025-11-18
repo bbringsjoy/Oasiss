@@ -157,65 +157,61 @@ session_start();
             } else include "../View/Index/erro.php";
             ?>
         </main>
-
-        <footer class="footer text-white pt-5 pb-3">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-md-3 mb-4">
-                    <h5 class="mb-3">DoceMix</h5>
-                    <p class="text-aling">Descubra a nossa coleção de doces artesanais, feitos com amor para celebrar o seu dia!</p>
-                    <div style="height: 20px"></div>
-                    <div class="d-flex social-icons mt-3">
-                        <a href="https://www.linkedin.com/in/beatriz-gomes-santana-0197b5289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="me-2"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-
-
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5 class="mb-3">Links Rápidos</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.php?page=sobre" class="text-white text-decoration-none">Sobre Nós</a></li>
-                    </ul>
-                    <ul class="list">
-                        <li><a href="index.php?page=sobre" class="text-white text-decoration-none">Página de Administrador</a></li>
-                    </ul>
-                    <div style="height: 50px"></div>
-                    <div class="d-flex social-icons mt-3 tst mt-auto">
-                        <a href="https://www.linkedin.com/in/beatriz-gomes-santana-0197b5289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="me-2"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5 class="mb-3">Legal</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.php?page=legal-footer" class="text-white text-decoration-none">Política de Privacidade</a></li>
-                        <li><a href="index.php?page=legal-footer#politica-privacidade" class="text-white text-decoration-none">Política de Privacidade</a></li>
-                        <li><a href="index.php?page=legal-footer#termos-uso" class="text-white text-decoration-none">Termos de Uso</a></li>
-                        <li><a href="index.php?page=legal-footer#politica-cookies" class="text-white text-decoration-none">Política de Cookies</a></li>
-                        <li><a href="index.php?page=legal-footer#lgpd" class="text-white text-decoration-none">LGPD</a></li>
-
-                    </ul>
-                    <div class="d-flex social-icons mt-3">
-                        <a href="https://www.linkedin.com/in/francesco-gris-053092355/" class="me-2"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5 class="mb-3">Contato</h5>
-                    <ul class="list-unstyled">
-                        <li class="d-flex align-items-center mb-2"><i class="fas fa-envelope me-2"></i> contato@docemix.com</li>
-                        <li class="d-flex align-items-center mb-2"><i class="fas fa-phone-alt me-2"></i> (44) 9 9999-9999</li>
-                        <li class="d-flex align-items-center"><i class="fas fa-map-marker-alt me-2"></i> Campo Mourão, PR - Brasil</li>
-                    </ul>
-                    <div class="d-flex social-icons mt-3">
-                        <a href="https://www.linkedin.com/in/lara-pereira-ferraz-5a2511367/" class="me-2"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="footer-hr">
-            <div class="d-flex justify-content-between align-items-center mt-3">
-                <p class="mb-0">&copy; 2025 DoceMix. Todos os direitos reservados.</p>
-            </div>
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <section class="nav-link" style="background-color: var(--maincolor); padding-top: 30px;" >
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fa-solid fa-cookie-bite"></i> Doce Mix
+          </h6>
+          <p>
+            Descubra a nossa coleção de doces artesanais, feitos com amor para celebrar o seu dia!
+          </p>
         </div>
-    </footer>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            Links Rápidos
+          </h6>
+          <p>
+            <a href="#!" class="text-reset footr">Sobre Nós</a>
+          </p>
+          <p>
+            <a href="Index" class="text-reset footr">Página de Administrador</a>
+          </p>
+        </div>
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            Legal
+          </h6>
+          <p>
+            <a href="#!" class="text-reset footr">Política de Privacidade</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset footr">Termos de Uso</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset footr">Política de Cookies</a>
+          </p>
+        </div>
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Contato</h6>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            contato@docemix.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> (44) 9999-9999</p>
+        <p><i class="fas fa-map-marker-alt me-2"></i>Campo Mourão, PR - Brasil</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="text-center p-4 footr" style="background-color: var(--maincolor); ">
+    © 2025 Copyright DoceMix
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 
 
     <?php
