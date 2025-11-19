@@ -72,7 +72,6 @@ header {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-
     width: 100% !important;
 }
 
@@ -87,6 +86,15 @@ header {
 .tstlogin {
     padding: 0;
     border: 0;
+}
+
+.footr {
+    color: var(--thircolor) !important;
+    text-decoration: none;
+}
+
+.footr:hover {
+    text-decoration: underline;
 }
 
 .capa {
