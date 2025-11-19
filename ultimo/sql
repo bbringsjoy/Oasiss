@@ -1,3 +1,4 @@
+-- CATEGORIA
 CREATE TABLE categoria (
   id INT(11) NOT NULL AUTO_INCREMENT,
   nome VARCHAR(50) NOT NULL,
@@ -11,6 +12,7 @@ INSERT INTO categoria (nome, ativo) VALUES
 ('Cookies', 'S');
 
 
+-- USUÁRIO
 CREATE TABLE usuario (
   id INT(11) NOT NULL AUTO_INCREMENT,
   nome VARCHAR(100) NOT NULL,
@@ -24,7 +26,7 @@ INSERT INTO usuario (nome, email, senha, ativo) VALUES
 ('nome', 'nome@gmail.com', 'senha', 'S');
 
 
--- TABELA DE PRODUTOS (DOCE)
+-- DOCE (PRODUTOS)
 CREATE TABLE doce (
   id INT(11) NOT NULL AUTO_INCREMENT,
   nome VARCHAR(100) NOT NULL,
@@ -41,6 +43,7 @@ CREATE TABLE doce (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
+-- CLIENTE
 CREATE TABLE cliente (
   id INT(11) NOT NULL AUTO_INCREMENT,
   nome VARCHAR(100) NOT NULL,
@@ -52,7 +55,8 @@ CREATE TABLE cliente (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-CREATE TABLE venda (
+-- PEDIDO 
+CREATE TABLE pedido (
   id INT(11) NOT NULL AUTO_INCREMENT,
   cliente_id INT(11) NOT NULL,
   data DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -65,23 +69,25 @@ CREATE TABLE venda (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- TABELA DE ITENS DA VENDA
+-- ITENS DO PEDIDO (corrigido)
 CREATE TABLE item (
-  venda_id INT(11) NOT NULL,
+  pedido_id INT(11) NOT NULL,
   produto_id INT(11) NOT NULL,
   qtde INT(11) NOT NULL,
   valor DECIMAL(10,2) NOT NULL,
-  PRIMARY KEY (venda_id, produto_id),
-  CONSTRAINT fk_item_venda FOREIGN KEY (venda_id)
-    REFERENCES venda(id)
+  PRIMARY KEY (pedido_id, produto_id),
+
+  CONSTRAINT fk_item_pedido FOREIGN KEY (pedido_id)
+    REFERENCES pedido(id)
     ON DELETE CASCADE ON UPDATE CASCADE,
+
   CONSTRAINT fk_item_produto FOREIGN KEY (produto_id)
     REFERENCES doce(id)
     ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- AUDITORIA
+-- AUDITORIA DE PREÇOS
 CREATE TABLE auditoria_preco (
   id INT AUTO_INCREMENT PRIMARY KEY,
   produto_id INT NOT NULL,
@@ -93,8 +99,7 @@ CREATE TABLE auditoria_preco (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- TRIGGER
-
+-- TRIGGER DE AUDITORIA
 CREATE TRIGGER trg_auditoria_preco
 BEFORE UPDATE ON doce
 FOR EACH ROW
@@ -106,18 +111,19 @@ BEGIN
 END;
 
 
--- ÍNDICES
+-- ÍNDICES (corrigidos)
 CREATE INDEX idx_doce_nome ON doce (nome);
 CREATE INDEX idx_doce_categoria ON doce (categoria_id);
 CREATE INDEX idx_cliente_email ON cliente (email);
-CREATE INDEX idx_venda_cliente ON venda (cliente_id);
-CREATE INDEX idx_venda_status ON venda (status);
+
+CREATE INDEX idx_pedido_cliente ON pedido (cliente_id);
+CREATE INDEX idx_pedido_status ON pedido (status);
+
 CREATE INDEX idx_doce_ativo ON doce (ativo);
 CREATE INDEX idx_cliente_ativo ON cliente (ativo);
- -- erro ao criar os índices
 
--- FUNÇÃO DE DISPONIBILIDADE
 
+-- FUNÇÃO DISPONIBILIDADE
 CREATE FUNCTION verificar_disponibilidade_produto(produtoID INT)
 RETURNS TINYINT
 DETERMINISTIC
@@ -136,8 +142,8 @@ BEGIN
     RETURN disponivel;
 END;
 
--- alterações feitas no banco --
 
+-- ALTERAÇÕES
 ALTER TABLE cliente
 DROP COLUMN telefone;
 
@@ -147,6 +153,8 @@ ADD COLUMN destaque CHAR(1) NOT NULL DEFAULT 'N';
 ALTER TABLE categoria
 CHANGE COLUMN nome descricao VARCHAR(255) NOT NULL;
 
+
+-- PROCEDURE PARA DOCES PADRÃO
 CREATE PROCEDURE inserir_doces_padrao()
 BEGIN
     INSERT INTO doce (nome, categoria_id, descricao, valor, imagem, ativo, destaque)
