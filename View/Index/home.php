@@ -6,6 +6,11 @@
     </p>
 </div>
 
+<div class="container" style="text-align: center; width: 100%">
+    <iframe src="http://localhost:3000/public/dashboard/45d5deb9-b224-44be-b6b1-593ca2df1558" title="W3Schools Free Online Web Tutorials" width=800 height=800>
+</iframe>
+</div>
+
 <div class="card">
     <div class="card-header">
         <h1 class="titulo">Atalhos</h1>
