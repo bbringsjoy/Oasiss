@@ -1,12 +1,12 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="float-start">Listagem de Usuários</h2>
+        <h2 class="float-start tltt">Listagem de Usuários</h2>
         <div class="float-end">
-            <a href="usuario" title="Novo Registro" class="btn btn-success">
+            <a href="usuario" title="Novo Registro" class="btn btn-success btntrc">
                 <i class="fas fa-file"></i> Novo Registro
             </a>
 
-            <a href="usuario/listar" title="Listar" class="btn btn-success">
+            <a href="usuario/listar" title="Listar" class="btn btn-success btntrc">
                 <i class="fas fa-file"></i> Listar
             </a>
         </div>
@@ -37,10 +37,10 @@
                             <td><?=$dados->email?></td>
                             <td><?=$ativo?></td>
                             <td width="150px">
-                                <a href="javascript:excluir(<?=$dados->id?>, 'usuario')" class="btn btn-danger btn-sm">
+                                <a href="javascript:excluir(<?=$dados->id?>, 'usuario')" class="btn btn-danger btnscd btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
-                                <a href="usuario/index/<?=$dados->id?>" class="btn btn-info btn-sm">
+                                <a href="usuario/index/<?=$dados->id?>" class="btn btn-info btnprm btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>

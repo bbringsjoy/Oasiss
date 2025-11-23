@@ -1,12 +1,12 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="float-start">Lista de Categorias</h2>
+        <h2 class="float-start tltt">Lista de Categorias</h2>
         <div class="float-end">
-            <a href="categoria" title="Novo Registro" class="btn btn-success">
+            <a href="categoria" title="Novo Registro" class="btn btn-success btntrc">
                 <i class="fas fa-file"></i> Novo Registro
             </a>
 
-            <a href="categoria/listar" title="Listar" class="btn btn-success">
+            <a href="categoria/listar" title="Listar" class="btn btn-success btntrc">
                 <i class="fas fa-file"></i> Listar
             </a>
         </div>
@@ -35,10 +35,10 @@
                             <td><?=$dados->descricao?></td>
                             <td><?=$ativo?></td>
                             <td width="150px">
-                                <a href="javascript:excluir(<?=$dados->id?>, 'categoria')" class="btn btn-danger btn-sm">
+                                <a href="javascript:excluir(<?=$dados->id?>, 'categoria')" class="btn btn-danger btnscd btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
-                                <a href="categoria/index/<?=$dados->id?>" class="btn btn-info btn-sm">
+                                <a href="categoria/index/<?=$dados->id?>" class="btn btn-info btnprm btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>

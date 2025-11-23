@@ -1,12 +1,12 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="float-start">Listagem de Doces</h2>
+        <h2 class="float-start tltt">Listagem de Doces</h2>
         <div class="float-end">
-            <a href="doce" title="Novo Registro" class="btn btn-success">
+            <a href="doce" title="Novo Registro" class="btn btn-success btntrc">
                 <i class="fas fa-file"></i> Novo Registro
             </a>
 
-            <a href="Doce/listar" title="Listar" class="btn btn-success">
+            <a href="Doce/listar" title="Listar" class="btn btn-success btntrc">
                 <i class="fas fa-file"></i> Listar
             </a>
         </div>
@@ -34,15 +34,15 @@
                         ?>
                         <tr>
                             <td><?=$dados->id?></td>
-                            <td><img src="arquivos/<?=$dados->imagem?>" width="70px"></td>
+                            <td><img src="arquivos/<?=$dados->imagem?>" width="70px" class="imglistar"></td>
                             <td><?=$dados->nome?></td>
                             <td><?=number_format($dados->valor,2,",",".")?></td>
                             <td><?=$ativo?></td>
                             <td width="150px">
-                                <a href="javascript:excluir(<?=$dados->id?>, 'doce')" class="btn btn-danger btn-sm">
+                                <a href="javascript:excluir(<?=$dados->id?>, 'doce')" class="btn btn-danger btnscd btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
-                                <a href="Doce/index/<?=$dados->id?>" class="btn btn-info btn-sm">
+                                <a href="Doce/index/<?=$dados->id?>" class="btn btn-info btnprm btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>

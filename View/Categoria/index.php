@@ -18,7 +18,7 @@ if (!empty($id)) {
 ?>
 <div class="card">
     <div class="card-header">
-        <h2 class="float-start">Cadastro de Categorias <i class="fa-solid fa-cookie-bite"></i></h2>
+        <h2 class="float-start tltt">Cadastro de Categorias <i class="fa-solid fa-cookie-bite"></i></h2>
         <div class="float-end">
             <a href="categoria" title="Novo Registro" class="btn btn-success btntrc">
                 <i class="fas fa-file"></i> Novo Registro
