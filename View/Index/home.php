@@ -1,14 +1,16 @@
 
 <div class="card d-flex justify-content-center align-items-center" 
-     style="height: 150px; font-size: 22px;">
+     style="padding-top: 50px; font-size: 22px;">
     <p class="text-center m-0" style="font-family: roboto; color:var(--maincolor); font-size:40px; font-weight: bold;">
         Olá seja-bem vindo: <?=$_SESSION["Doce"]["nome"]?> <i class="fa-solid fa-cookie-bite"></i>
     </p>
+    <br>
+    <iframe src="http://localhost:3000/public/dashboard/45d5deb9-b224-44be-b6b1-593ca2df1558" title="W3Schools Free Online Web Tutorials" width=800 height=800>
+</iframe>
 </div>
 
 <div class="container" style="text-align: center; width: 100%">
-    <iframe src="http://localhost:3000/public/dashboard/45d5deb9-b224-44be-b6b1-593ca2df1558" title="W3Schools Free Online Web Tutorials" width=800 height=800>
-</iframe>
+    
 </div>
 
 <div class="card">

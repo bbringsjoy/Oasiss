@@ -206,7 +206,7 @@ session_start();
       </div>
     </div>
   </section>
-  <div class="text-center p-4 footr" style="background-color: var(--maincolor); ">
+  <div class="text-center p-4 footr" style="background-color: var(--maincolor); text-decoration:none;">
     © 2025 Copyright DoceMix
   </div>
   <!-- Copyright -->
