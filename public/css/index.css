@@ -225,3 +225,20 @@ header {
     color: var(--maincolor) !important;
     background-color: var(--thircolor) !important;
 }
+
+/*botão quaternário (pra fundo escuro)*/
+
+.btnqrt {
+    background-color: var(--thircolor) !important;
+    color: var(--maincolor);
+    border: 1px solid var(--thircolor) !important;
+    transition: 0.3s;
+}
+
+.btnqrt:hover {
+    box-shadow: 1px solid var(--thircolor);
+    transition: 0.3s;
+    color: var(--thircolor) !important;
+    background-color: var(--quadcolor) !important;
+    border: 1px solid var(--quadcolor) !important;
+}
